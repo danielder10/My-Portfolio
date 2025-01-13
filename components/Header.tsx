@@ -25,7 +25,12 @@ const Header = () => {
   return (
     <header className="p-4 bg-gray-800 text-white">
       <div className="flex justify-between items-center">
-        <div className="text-2xl font-bold">Portfolio</div>
+      <a
+                onClick={() => router.push('/')}
+                className="text-xl cursor-pointer"
+              >
+        <div className="text-2xl font-bold">DanielLogo</div>
+        </a>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="lg:hidden focus:outline-none"
