@@ -67,7 +67,7 @@ const HomePage = () => {
         </section>
 
         {/* Grid Container */}
-        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <section className="flex flex-wrap justify-center gap-6 px-4 w-full max-w-screen-xl">
             {projects.map((project, index) => (
             <ProjectCard
                 key={index}
