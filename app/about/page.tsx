@@ -1,4 +1,5 @@
 import Header from '../../components/Header';
+import Footer from '@/components/Footer';
 
 const AboutPage = () => {
   return (
@@ -7,6 +8,7 @@ const AboutPage = () => {
       <main className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
         
       </main>
+      <Footer/>
     </div>
   );
 };
