@@ -49,9 +49,9 @@ const LandingPage: React.FC = () => {
     <div className="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
       {/* Header */}
       <Header />
-
+    <div className="">
       {/* Hero Section */}
-      <section className="flex flex-col lg:flex-row items-center justify-between h-screen px-6 bg-gray-100 dark:bg-gray-900 flex-grow">
+      <section className="flex flex-col lg:flex-row items-center justify-between h-screen px-6 bg-gray-100 dark:bg-gray-900 flex-grow mt-10">
         <div className="flex flex-col items-center w-full lg:w-1/2 text-left">
           <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white mb-6">
             Welcome to My Portfolio
@@ -83,15 +83,15 @@ const LandingPage: React.FC = () => {
             </ul>
           </div>
         </div>
-        <div className="w-1/2 lg:w-1/2 flex justify-center">
+        <div className="w-1/3 lg:w-1/2 flex justify-center mt-5">
           <img
-            src="https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png"
+            src="/Logo.png"
             alt="Illustration"
             className="max-w-full h-auto"
           />
         </div>
       </section>
-
+      </div>
       {/* Footer */}
       <Footer />
     </div>

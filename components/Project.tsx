@@ -10,7 +10,7 @@ type ProjectCardProps = {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ name, description, image }) => {
   return (
-    <div className="flex flex-col bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow duration-200 w-64">
+    <div className="flex flex-col bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow duration-200 w-64 sm:w-1/3 lg:w-1/4">
       <img
         src={image}
         alt={name}

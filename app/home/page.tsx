@@ -54,6 +54,13 @@ const HomePage = () => {
       image:
         "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
     },
+    {
+      name: "Project 9",
+      description: "Description for Project 9",
+      image:
+        "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
+    },
+    
   ];
 
   return (
@@ -62,25 +69,32 @@ const HomePage = () => {
       <main className="flex-grow flex flex-col items-center px-4">
         {/* Title Section */}
         <section className="text-center py-10">
-            <h1 className="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
-            <p className="text-lg text-gray-600 mb-6">Showcasing my projects and skills.</p>
+          <h1 className="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
+          <p className="text-lg text-gray-600 mb-6">
+            Showcasing my projects and skills.
+          </p>
         </section>
 
         {/* Grid Container */}
-        <section className="flex flex-wrap justify-center gap-6 px-4 w-full max-w-screen-xl">
-            {projects.map((project, index) => (
+        <section
+          id="cards-container"
+          className="flex flex-wrap justify-center items-center gap-6 w-full max-w-screen-xl"
+        >
+          {projects.map((project, index) => (
             <ProjectCard
-                key={index}
-                name={project.name}
-                description={project.description}
-                image={project.image}
+              key={index}
+              name={project.name}
+              description={project.description}
+              image={project.image}
             />
-            ))}
+          ))}
         </section>
-        </main>
+      </main>
       <Footer />
     </div>
   );
 };
 
 export default HomePage;
+
+

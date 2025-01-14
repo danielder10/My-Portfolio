@@ -23,7 +23,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="p-4 bg-gray-800 text-white">
+    <header className="p-4 bg-gray-800 text-white mb-10">
       <div className="flex justify-between items-center">
       <a
                 onClick={() => router.push('/')}

@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-gray-400 py-8 w-full absolute bottom-0">
+    <footer className="bg-gray-800 text-gray-400 py-8 w-full">
       <div className="max-w-6xl mx-auto px-6 lg:px-0 flex flex-col md:flex-row justify-between items-center">
         <p className="text-center md:text-left mb-4 md:mb-0">
           © {new Date().getFullYear()} My Portfolio. All rights reserved.
