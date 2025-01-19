@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
     <nav className="fixed top-0 right-0 p-4">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="bg-gray-800 text-white p-2 rounded-md focus:outline-none"
+        className="bg-coffee text-white p-2 rounded-md focus:outline-none"
       >
         ☰
       </button>

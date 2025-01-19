@@ -1,9 +1,9 @@
-import AboutPage from "@/components/AboutPage";
+import ReachOut from "@/components/ReachOut";
 
 export default function Layout() {
   return (
     <div className="flex flex-col min-h-screen">
-      <AboutPage />
+      <ReachOut />
     </div>
   );
 }

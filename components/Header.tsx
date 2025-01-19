@@ -14,7 +14,7 @@ const Header = () => {
       setIsMobile(window.innerWidth < 1024);
     };
 
-    handleResize(); // Set initial state
+    handleResize(); 
     window.addEventListener('resize', handleResize);
 
     return () => {
@@ -23,13 +23,13 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="p-4 bg-gray-800 text-white mb-10">
+    <header className="p-4 bg-coffee text-white mb-10">
       <div className="flex justify-between items-center">
       <a
                 onClick={() => router.push('/')}
                 className="text-xl cursor-pointer"
               >
-        <div className="text-2xl font-bold">DanielLogo</div>
+        <div className="text-2xl font-bold"><img src="/Logo.png" className="w-40 h-auto"></img></div>
         </a>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -53,7 +53,7 @@ const Header = () => {
         <nav
           className={`${
             menuOpen || !isMobile ? 'block' : 'hidden'
-          } absolute top-0 left-0 w-full bg-gray-800 lg:flex lg:static lg:w-auto`}
+          } absolute top-0 left-0 w-full bg-coffee lg:flex lg:static lg:w-auto`}
         >
           <ul className="flex flex-col lg:flex-row">
             <li className="p-4">
