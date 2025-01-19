@@ -14,7 +14,7 @@ const SocialMedia: React.FC<SocialMediaProps> = ({ size }) => {
     >
       <a
         className="bg-black bg-opacity-50 p-4 rounded-full transition-all hover:scale-110 scale-100"
-        href="https://www.linkedin.com"
+        href="https://www.linkedin.com/in/daniel-der-6112372b2/"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -22,7 +22,7 @@ const SocialMedia: React.FC<SocialMediaProps> = ({ size }) => {
       </a>
       <a
         className="bg-black bg-opacity-50 p-4 rounded-full transition-all hover:scale-110 scale-100"
-        href="https://github.com"
+        href="https://github.com/danielder10"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -30,7 +30,7 @@ const SocialMedia: React.FC<SocialMediaProps> = ({ size }) => {
       </a>
       <a
         className="bg-black bg-opacity-50 p-4 rounded-full transition-all hover:scale-110 scale-100"
-        href="https://instagram.com"
+        href="https://www.instagram.com/dan._.l_l/?utm_source=ig_web_button_share_sheet"
         target="_blank"
         rel="noopener noreferrer"
       >
