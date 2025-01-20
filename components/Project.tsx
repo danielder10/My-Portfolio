@@ -28,7 +28,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ name, description, image, lin
       <p className="text-gray-600 text-sm mb-4">{description}</p>
       <button
         onClick={handleNavigation}
-        className="bg-blue-500 text-white py-2 px-6 rounded-md hover:bg-blue-600 transition"
+        className="bg-button text-white py-2 px-6 rounded-md hover:bg-button2 transition"
       >
         Learn More
       </button>

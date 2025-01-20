@@ -22,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({
 
   const typeStyles = !disableTypeStyles
     ? type === "primary"
-      ? "bg-blue-500 text-white hover:bg-blue-600 dark:bg-blue-700 dark:text-white hover:dark:bg-blue-800 focus:ring-blue-300 dark:focus:ring-blue-500 w-1/2"
+      ? "bg-button text-white hover:bg-button2 dark:bg-button dark:text-white hover:dark:bg-button2 focus:ring-button dark:focus:ring-button2 w-1/2"
       : "bg-gray-300 text-gray-800 hover:bg-gray-400 dark:bg-gray-700 dark:text-white hover:dark:bg-gray-600 focus:ring-gray-400 dark:focus:ring-gray-500 w-1/2"
     : "";
 

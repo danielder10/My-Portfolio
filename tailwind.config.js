@@ -10,6 +10,8 @@ module.exports = {
         gradientLeft: "#755c48",
         gradientRight: "#AF906E",
         coffee: "#dbc1ac",
+        button: "#A37658",
+        button2: "#755C48",
       },
     },
   },

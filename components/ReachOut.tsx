@@ -24,7 +24,7 @@ const ReachOut = () => {
           <img
             src="/Mockup.png"
             alt="ReachOut Mockup"
-            className="mx-auto w-1/2 md:w-1/3 lg:w-1/4 h-auto mb-6"
+            className="mx-auto w-3/4 md:w-2/3 lg:w-1/2 h-auto mb-6"
           />
 
           {/* Description Section */}
