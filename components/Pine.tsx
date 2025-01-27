@@ -6,6 +6,12 @@ import Button from "./Button";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Image, { StaticImageData } from "next/image";
+import designOne from "../public/hero.png";
+import designTwo from "../public/Mockup.png";
+import designThree from "../public/color.png";
+import designFour from "../public/impact.png";
+import designFive from "../public/feature.png";
+import designSix from "../public/story.png";
 import challengeOne from "../public/hero.png";
 import challengeTwo from "../public/Mockup.png";
 import challengeThree from "../public/color.png";
@@ -21,19 +27,95 @@ const Pine = () => {
     router.push("/home");
   };
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [designCurrentIndex, setDesignCurrentIndex] = useState(0);
+  const [challengeCurrentIndex, setChallengeCurrentIndex] = useState(0);
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselImages.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + carouselImages.length) % carouselImages.length
+  const handleDesignNext = () => {
+    setDesignCurrentIndex(
+      (prevIndex) => (prevIndex + 1) % designCarouselImages.length
     );
   };
 
-  const carouselImages = [
+  const handleDesignPrev = () => {
+    setDesignCurrentIndex(
+      (prevIndex) =>
+        (prevIndex - 1 + designCarouselImages.length) %
+        designCarouselImages.length
+    );
+  };
+
+  const handleChallengeNext = () => {
+    setChallengeCurrentIndex(
+      (prevIndex) => (prevIndex + 1) % challengeCarouselImages.length
+    );
+  };
+
+  const handleChallengePrev = () => {
+    setChallengeCurrentIndex(
+      (prevIndex) =>
+        (prevIndex - 1 + challengeCarouselImages.length) %
+        challengeCarouselImages.length
+    );
+  };
+
+  const designCarouselImages = [
+    {
+      src: challengeOne,
+      alt: "success story 1",
+      id: 1,
+      issue: "Welcoming Hero Section:",
+      type: "Interface + Design Choice",
+      sum:
+        "A professional and collaborative setting with diverse individuals working together, accompanied by a prominent 'Get Started Now!' button.",
+    },
+    {
+      src: challengeTwo,
+      alt: "success story 2",
+      id: 2,
+      issue: "Clean Layout",
+      type: "Interface",
+      sum:
+        "Sections with clear headings like 'Progress Tracking' and 'Resource Database' for easy navigation.",
+    },
+    {
+      src: challengeThree,
+      alt: "success story 3",
+      id: 3,
+      issue: "Consistent Color Scheme",
+      type: "Design Choice",
+      sum:
+        "Highlighting a soothing green and grey palette, applied cohesively across buttons, backgrounds, and headings.",
+    },
+    {
+      src: challengeFour,
+      alt: "success story 4",
+      id: 4,
+      issue: "Impact Highlights",
+      type: "Interface",
+      sum:
+        "A visually appealing infographic / dashboard displaying '2000+ job seekers placed' and '500+ nonprofit organizations engaged.'",
+    },
+    {
+      src: challengeFive,
+      alt: "success story 5",
+      id: 5,
+      issue: "Interactive Features",
+      type: "Interface",
+      sum:
+        "Buttons indicating user interactivity capabilities, alongside progress bars or job-matching visuals in action are clearly visible.",
+    },
+    {
+      src: challengeSix,
+      alt: "success story 6",
+      id: 6,
+      issue: "Success stories",
+      type: "Design Choice",
+      sum:
+        "We chose a carousel of smiling individuals with captions highlighting their success stories, set against vibrant and engaging backdrops.",
+    },
+  ];
+
+  const challengeCarouselImages = [
     {
       src: challengeOne,
       alt: "success story 1",
@@ -223,9 +305,9 @@ const Pine = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
         <div className="col-span-1 sm:col-span-2 lg:col-span-3 relative w-full max-w-6xl mx-auto py-16">
             <div className="relative flex items-center justify-center h-[500px]">
-            {carouselImages.map((image, index) => {
+            {designCarouselImages.map((image, index) => {
                 const position =
-                (index - currentIndex + carouselImages.length) % carouselImages.length;
+                (index - designCurrentIndex + designCarouselImages.length) % designCarouselImages.length;
 
                 let transform = "";
                 let blur = "";
@@ -238,7 +320,7 @@ const Pine = () => {
                 blur = "blur-none";
                 opacity = "opacity-100";
                 zIndex = 20;
-                } else if (position === 1 || position === carouselImages.length - 1) {
+                } else if (position === 1 || position === designCarouselImages.length - 1) {
                 // Side cards
                 transform =
                     position === 1 ? "translate-x-72 scale-90" : "-translate-x-72 scale-90";
@@ -283,13 +365,13 @@ const Pine = () => {
 
             {/* Nav buttons */}
             <button
-            onClick={handlePrev}
+            onClick={handleDesignPrev}
             className="absolute top-1/2 left-16 sm:left-20 md:left-32 lg:left-96 transform -translate-y-1/2 bg-button rounded-full p-4 hover:bg-button2 z-30 opacity-80"
             >
             &#8594;
             </button>
             <button
-            onClick={handleNext}
+            onClick={handleDesignNext}
             className="absolute top-1/2 right-16 sm:right-20 md:right-32 lg:right-96 transform -translate-y-1/2 bg-button rounded-full p-4 hover:bg-button2 z-30 opacity-80"
             >
             &#8592;
@@ -349,9 +431,9 @@ const Pine = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
         <div className="col-span-1 sm:col-span-2 lg:col-span-3 relative w-full max-w-6xl mx-auto py-16">
             <div className="relative flex items-center justify-center h-[500px]">
-            {carouselImages.map((image, index) => {
+            {challengeCarouselImages.map((image, index) => {
                 const position =
-                (index - currentIndex + carouselImages.length) % carouselImages.length;
+                (index - challengeCurrentIndex + challengeCarouselImages.length) % challengeCarouselImages.length;
 
                 let transform = "";
                 let blur = "";
@@ -364,7 +446,7 @@ const Pine = () => {
                 blur = "blur-none";
                 opacity = "opacity-100";
                 zIndex = 20;
-                } else if (position === 1 || position === carouselImages.length - 1) {
+                } else if (position === 1 || position === challengeCarouselImages.length - 1) {
                 // Side cards
                 transform =
                     position === 1 ? "translate-x-72 scale-90" : "-translate-x-72 scale-90";
@@ -409,13 +491,13 @@ const Pine = () => {
 
             {/* Nav buttons */}
             <button
-            onClick={handlePrev}
+            onClick={handleChallengePrev}
             className="absolute top-1/2 left-16 sm:left-20 md:left-32 lg:left-96 transform -translate-y-1/2 bg-button rounded-full p-4 hover:bg-button2 z-30 opacity-80"
             >
             &#8594;
             </button>
             <button
-            onClick={handleNext}
+            onClick={handleChallengeNext}
             className="absolute top-1/2 right-16 sm:right-20 md:right-32 lg:right-96 transform -translate-y-1/2 bg-button rounded-full p-4 hover:bg-button2 z-30 opacity-80"
             >
             &#8592;

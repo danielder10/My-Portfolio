@@ -6,6 +6,12 @@ import Button from "./Button";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Image, { StaticImageData } from "next/image";
+import designOne from "../public/hero.png";
+import designTwo from "../public/Mockup.png";
+import designThree from "../public/color.png";
+import designFour from "../public/impact.png";
+import designFive from "../public/feature.png";
+import designSix from "../public/story.png";
 import challengeOne from "../public/hero.png";
 import challengeTwo from "../public/Mockup.png";
 import challengeThree from "../public/color.png";
@@ -21,74 +27,139 @@ const ReachOut = () => {
     router.push("/home");
   };
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [designCurrentIndex, setDesignCurrentIndex] = useState(0);
+  const [challengeCurrentIndex, setChallengeCurrentIndex] = useState(0);
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselImages.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + carouselImages.length) % carouselImages.length
+  const handleDesignNext = () => {
+    setDesignCurrentIndex(
+      (prevIndex) => (prevIndex + 1) % designCarouselImages.length
     );
   };
 
-  const carouselImages = [
+  const handleDesignPrev = () => {
+    setDesignCurrentIndex(
+      (prevIndex) =>
+        (prevIndex - 1 + designCarouselImages.length) %
+        designCarouselImages.length
+    );
+  };
+
+  const handleChallengeNext = () => {
+    setChallengeCurrentIndex(
+      (prevIndex) => (prevIndex + 1) % challengeCarouselImages.length
+    );
+  };
+
+  const handleChallengePrev = () => {
+    setChallengeCurrentIndex(
+      (prevIndex) =>
+        (prevIndex - 1 + challengeCarouselImages.length) %
+        challengeCarouselImages.length
+    );
+  };
+
+  const designCarouselImages = [
+    {
+      src: designOne,
+      alt: "Design Feature 1",
+      id: 1,
+      issue: "Hero Section Design",
+      type: "Interface + Design Choice",
+      sum: "A bold hero section featuring the app's logo and a clear call-to-action for users to get started.",
+    },
+    {
+      src: designTwo,
+      alt: "Design Feature 2",
+      id: 2,
+      issue: "Mockup Presentation",
+      type: "Design Choice",
+      sum: "Detailed mockups showcasing the app's main features, such as the quiz and recommendation sections.",
+    },
+    {
+      src: designThree,
+      alt: "Design Feature 3",
+      id: 3,
+      issue: "Color Palette",
+      type: "Design Choice",
+      sum: "A soothing pastel green and grey color scheme for a professional and calming user experience.",
+    },
+    {
+      src: designFour,
+      alt: "Design Feature 4",
+      id: 4,
+      issue: "Impact Metrics",
+      type: "Interface",
+      sum: "Highlighting app success metrics like '100+ recipes shared' and '50+ restaurants partnered.'",
+    },
+    {
+      src: designFive,
+      alt: "Design Feature 5",
+      id: 5,
+      issue: "Feature Highlights",
+      type: "Interface",
+      sum: "Interactive features, including a carousel for personalized recommendations and recipe ideas.",
+    },
+    {
+      src: designSix,
+      alt: "Design Feature 6",
+      id: 6,
+      issue: "Storytelling",
+      type: "Design Choice",
+      sum: "Visual storytelling elements showcasing user journeys and success stories with engaging graphics.",
+    },
+  ];
+
+  const challengeCarouselImages = [
     {
       src: challengeOne,
-      alt: "success story 1",
+      alt: "Challenge 1",
       id: 1,
-      issue: "Welcoming Hero Section:",
-      type: "Interface + Design Choice",
-      sum:
-        "A professional and collaborative setting with diverse individuals working together, accompanied by a prominent 'Get Started Now!' button.",
+      issue: "Hero Section Challenge",
+      type: "Design Challenge",
+      sum: "Making the hero section visually striking while ensuring accessibility and clarity.",
     },
     {
       src: challengeTwo,
-      alt: "success story 2",
+      alt: "Challenge 2",
       id: 2,
-      issue: "Clean Layout",
-      type: "Interface",
-      sum:
-        "Sections with clear headings like 'Progress Tracking' and 'Resource Database' for easy navigation.",
+      issue: "Layout Challenge",
+      type: "Interface Challenge",
+      sum: "Designing a clean, intuitive layout that supports user navigation and responsiveness.",
     },
     {
       src: challengeThree,
-      alt: "success story 3",
+      alt: "Challenge 3",
       id: 3,
-      issue: "Consistent Color Scheme",
-      type: "Design Choice",
-      sum:
-        "Highlighting a soothing green and grey palette, applied cohesively across buttons, backgrounds, and headings.",
+      issue: "Color Palette Challenge",
+      type: "Design Challenge",
+      sum: "Balancing the color scheme for aesthetic appeal and readability across devices.",
     },
     {
       src: challengeFour,
-      alt: "success story 4",
+      alt: "Challenge 4",
       id: 4,
-      issue: "Impact Highlights",
-      type: "Interface",
-      sum:
-        "A visually appealing infographic / dashboard displaying '2000+ job seekers placed' and '500+ nonprofit organizations engaged.'",
+      issue: "Impact Metrics Challenge",
+      type: "Interface Challenge",
+      sum: "Presenting dynamic metrics without overwhelming the user experience.",
     },
     {
       src: challengeFive,
-      alt: "success story 5",
+      alt: "Challenge 5",
       id: 5,
-      issue: "Interactive Features",
-      type: "Interface",
-      sum:
-        "Buttons indicating user interactivity capabilities, alongside progress bars or job-matching visuals in action are clearly visible.",
+      issue: "Interactive Features Challenge",
+      type: "Design Challenge",
+      sum: "Ensuring progress tracking and job-matching visuals are engaging and functional.",
     },
     {
       src: challengeSix,
-      alt: "success story 6",
+      alt: "Challenge 6",
       id: 6,
-      issue: "Success stories",
-      type: "Design Choice",
-      sum:
-        "We chose a carousel of smiling individuals with captions highlighting their success stories, set against vibrant and engaging backdrops.",
+      issue: "Storytelling Challenge",
+      type: "Design Challenge",
+      sum: "Creating a seamless carousel of user success stories with compelling visuals.",
     },
   ];
+  
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -226,9 +297,10 @@ const ReachOut = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
         <div className="col-span-1 sm:col-span-2 lg:col-span-3 relative w-full max-w-6xl mx-auto py-16">
             <div className="relative flex items-center justify-center h-[500px]">
-            {carouselImages.map((image, index) => {
+            {designCarouselImages.map((image, index) => {
                 const position =
-                (index - currentIndex + carouselImages.length) % carouselImages.length;
+                    (index - designCurrentIndex + designCarouselImages.length) %
+                    designCarouselImages.length;
 
                 let transform = "";
                 let blur = "";
@@ -236,26 +308,21 @@ const ReachOut = () => {
                 let zIndex = 0;
 
                 if (position === 0) {
-                // Center card
-                transform = "translate-x-0 scale-100";
-                blur = "blur-none";
-                opacity = "opacity-100";
-                zIndex = 20;
-                } else if (position === 1 || position === carouselImages.length - 1) {
-                // Side cards
-                transform =
-                    position === 1 ? "translate-x-72 scale-90" : "-translate-x-72 scale-90";
-                blur = "blur-md";
-                opacity = "opacity-75";
-                zIndex = 10;
+                    transform = "translate-x-0 scale-100";
+                    blur = "blur-none";
+                    opacity = "opacity-100";
+                    zIndex = 20;
+                } else if (position === 1 || position === designCarouselImages.length - 1) {
+                    transform = position === 1 ? "translate-x-72 scale-90" : "-translate-x-72 scale-90";
+                    blur = "blur-md";
+                    opacity = "opacity-75";
+                    zIndex = 10;
                 } else {
-                // Hidden cards
-                transform = "translate-x-0 scale-70";
-                blur = "blur-lg";
-                opacity = "opacity-0";
-                zIndex = 0;
+                    transform = "translate-x-0 scale-70";
+                    blur = "blur-lg";
+                    opacity = "opacity-0";
+                    zIndex = 0;
                 }
-
                 return (
                 <div
                     key={image.id}
@@ -286,13 +353,13 @@ const ReachOut = () => {
 
             {/* Nav buttons */}
             <button
-            onClick={handlePrev}
+            onClick={handleDesignPrev}
             className="absolute top-1/2 left-16 sm:left-20 md:left-32 lg:left-96 transform -translate-y-1/2 bg-button rounded-full p-4 hover:bg-button2 z-30 opacity-80"
             >
             &#8594;
             </button>
             <button
-            onClick={handleNext}
+            onClick={handleDesignNext}
             className="absolute top-1/2 right-16 sm:right-20 md:right-32 lg:right-96 transform -translate-y-1/2 bg-button rounded-full p-4 hover:bg-button2 z-30 opacity-80"
             >
             &#8592;
@@ -352,9 +419,10 @@ const ReachOut = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
         <div className="col-span-1 sm:col-span-2 lg:col-span-3 relative w-full max-w-6xl mx-auto py-16">
             <div className="relative flex items-center justify-center h-[500px]">
-            {carouselImages.map((image, index) => {
+            {challengeCarouselImages.map((image, index) => {
                 const position =
-                (index - currentIndex + carouselImages.length) % carouselImages.length;
+                    (index - challengeCurrentIndex + challengeCarouselImages.length) %
+                    challengeCarouselImages.length;
 
                 let transform = "";
                 let blur = "";
@@ -362,24 +430,20 @@ const ReachOut = () => {
                 let zIndex = 0;
 
                 if (position === 0) {
-                // Center card
-                transform = "translate-x-0 scale-100";
-                blur = "blur-none";
-                opacity = "opacity-100";
-                zIndex = 20;
-                } else if (position === 1 || position === carouselImages.length - 1) {
-                // Side cards
-                transform =
-                    position === 1 ? "translate-x-72 scale-90" : "-translate-x-72 scale-90";
-                blur = "blur-md";
-                opacity = "opacity-75";
-                zIndex = 10;
+                    transform = "translate-x-0 scale-100";
+                    blur = "blur-none";
+                    opacity = "opacity-100";
+                    zIndex = 20;
+                } else if (position === 1 || position === challengeCarouselImages.length - 1) {
+                    transform = position === 1 ? "translate-x-72 scale-90" : "-translate-x-72 scale-90";
+                    blur = "blur-md";
+                    opacity = "opacity-75";
+                    zIndex = 10;
                 } else {
-                // Hidden cards
-                transform = "translate-x-0 scale-70";
-                blur = "blur-lg";
-                opacity = "opacity-0";
-                zIndex = 0;
+                    transform = "translate-x-0 scale-70";
+                    blur = "blur-lg";
+                    opacity = "opacity-0";
+                    zIndex = 0;
                 }
 
                 return (
@@ -412,13 +476,13 @@ const ReachOut = () => {
 
             {/* Nav buttons */}
             <button
-            onClick={handlePrev}
+            onClick={handleChallengePrev}
             className="absolute top-1/2 left-16 sm:left-20 md:left-32 lg:left-96 transform -translate-y-1/2 bg-button rounded-full p-4 hover:bg-button2 z-30 opacity-80"
             >
             &#8594;
             </button>
             <button
-            onClick={handleNext}
+            onClick={handleChallengeNext}
             className="absolute top-1/2 right-16 sm:right-20 md:right-32 lg:right-96 transform -translate-y-1/2 bg-button rounded-full p-4 hover:bg-button2 z-30 opacity-80"
             >
             &#8592;
