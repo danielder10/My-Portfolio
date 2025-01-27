@@ -6,13 +6,13 @@ import Button from "./Button";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Image, { StaticImageData } from "next/image";
-import challengeOne from "../public/Mockup.png";
+import challengeOne from "../public/hero.png";
 import challengeTwo from "../public/Mockup.png";
-import challengeThree from "../public/Mockup.png";
-import challengeFour from "../public/Mockup.png";
-import challengeFive from "../public/Mockup.png";
-import challengeSix from "../public/Mockup.png";
-import logo from "../public/Mockup.png"; 
+import challengeThree from "../public/color.png";
+import challengeFour from "../public/impact.png";
+import challengeFive from "../public/feature.png";
+import challengeSix from "../public/story.png";
+import logo from "../public/rlogo.png"; 
 
 const ReachOut = () => {
   const router = useRouter();
@@ -106,7 +106,7 @@ const ReachOut = () => {
           />
 
           {/* Description Section */}
-          <section className="text-left max-w-3xl mx-auto bg-coffee p-10 rounded-lg mb-12">
+          <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12">
             <h1 className="text-5xl font-bold mb-4">Reach Out</h1>
             <p className="text-lg leading-relaxed">
               “ReachOut is a social impact employment app designed to support
@@ -174,7 +174,7 @@ const ReachOut = () => {
           </div>
 
         {/* Interface + Design Choice Section */}
-        <section className="text-left max-w-3xl mx-auto bg-coffee p-10 rounded-lg mb-12">
+        <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12">
             <h1 className="text-5xl font-bold mb-4">Interface and Design Choices</h1>
             <ul className="text-lg leading-relaxed space-y-4">
                 <li className="flex items-start">
@@ -222,14 +222,13 @@ const ReachOut = () => {
             </ul>
         </section>
 
-        {/* Carousel Instead of Static Images */}
+        {/* Carousel Design */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-          <div className="col-span-1 sm:col-span-2 lg:col-span-3 relative w-full max-w-5xl mx-auto py-12">
-            <div className="relative flex items-center justify-center h-[350px]">
-              {carouselImages.map((image, index) => {
+        <div className="col-span-1 sm:col-span-2 lg:col-span-3 relative w-full max-w-6xl mx-auto py-16">
+            <div className="relative flex items-center justify-center h-[500px]">
+            {carouselImages.map((image, index) => {
                 const position =
-                  (index - currentIndex + carouselImages.length) %
-                  carouselImages.length;
+                (index - currentIndex + carouselImages.length) % carouselImages.length;
 
                 let transform = "";
                 let blur = "";
@@ -237,67 +236,71 @@ const ReachOut = () => {
                 let zIndex = 0;
 
                 if (position === 0) {
-                  // Center card
-                  transform = "translate-x-0 scale-100";
-                  blur = "blur-none";
-                  opacity = "opacity-100";
-                  zIndex = 20;
+                // Center card
+                transform = "translate-x-0 scale-100";
+                blur = "blur-none";
+                opacity = "opacity-100";
+                zIndex = 20;
                 } else if (position === 1 || position === carouselImages.length - 1) {
-                  // Side cards
-                  transform =
-                    position === 1 ? "translate-x-60 scale-75" : "-translate-x-60 scale-75";
-                  blur = "blur-md";
-                  opacity = "opacity-75";
-                  zIndex = 10;
+                // Side cards
+                transform =
+                    position === 1 ? "translate-x-72 scale-90" : "-translate-x-72 scale-90";
+                blur = "blur-md";
+                opacity = "opacity-75";
+                zIndex = 10;
                 } else {
-                  // Hidden cards
-                  transform = "translate-x-0 scale-50";
-                  blur = "blur-lg";
-                  opacity = "opacity-0";
-                  zIndex = 0;
+                // Hidden cards
+                transform = "translate-x-0 scale-70";
+                blur = "blur-lg";
+                opacity = "opacity-0";
+                zIndex = 0;
                 }
 
                 return (
-                  <div
+                <div
                     key={image.id}
                     className={`absolute transition-all duration-500 ease-in-out transform ${transform} ${blur} ${opacity}`}
                     style={{ zIndex }}
-                  >
-                    <div className="bg-white rounded-lg shadow-lg p-6 w-80 h-96 flex flex-col items-center text-center">
-                      <div className="w-28 h-28 mb-4">
+                >
+                    <div className="bg-white rounded-lg shadow-lg p-8 w-[384px] h-[480px] flex flex-col items-center text-center">
+                    <div className="w-36 h-36 mb-6">
                         <Image
-                          src={image.src}
-                          alt={image.alt}
-                          className="w-full h-full object-cover"
+                        src={image.src}
+                        alt={image.alt}
+                        className="w-full h-full object-cover"
                         />
-                      </div>
-                      <h3 className="text-xl font-semibold">{image.issue}</h3>
-                      <p className="text-sm text-gray-500 mb-4">{image.type}</p>
-                      <p className="text-sm text-spaceCadet-700">{image.sum}</p>
-                      <Image src={logo} alt="reachout logo" className="w-10 h-10 mt-5 p-2 bg-ylnMnBlue bg-opacity-10 rounded-full" />
                     </div>
-                  </div>
+                    <h3 className="text-2xl font-semibold">{image.issue}</h3>
+                    <p className="text-base text-gray-500 mb-4">{image.type}</p>
+                    <p className="text-base text-spaceCadet-700">{image.sum}</p>
+                    <Image
+                        src={logo}
+                        alt="reachout logo"
+                        className="w-12 h-12 mt-6 p-2 bg-ylnMnBlue bg-opacity-10 rounded-full"
+                    />
+                    </div>
+                </div>
                 );
-              })}
+            })}
             </div>
 
             {/* Nav buttons */}
             <button
-              onClick={handlePrev}
-              className="absolute top-1/2 left-96 transform -translate-y-1/2 bg-gray-200 rounded-full p-3 hover:bg-gray-300 z-30"
+            onClick={handlePrev}
+            className="absolute top-1/2 left-16 sm:left-20 md:left-32 lg:left-96 transform -translate-y-1/2 bg-button rounded-full p-4 hover:bg-button2 z-30 opacity-80"
             >
-              &#8594;
+            &#8594;
             </button>
             <button
-              onClick={handleNext}
-              className="absolute top-1/2 right-96 transform -translate-y-1/2 bg-gray-200 rounded-full p-3 hover:bg-gray-300 z-30"
+            onClick={handleNext}
+            className="absolute top-1/2 right-16 sm:right-20 md:right-32 lg:right-96 transform -translate-y-1/2 bg-button rounded-full p-4 hover:bg-button2 z-30 opacity-80"
             >
-              &#8592;
+            &#8592;
             </button>
-          </div>
         </div>
-        {/* Interface + Design Choice Section */}
-        <section className="text-left max-w-3xl mx-auto bg-coffee p-10 rounded-lg mb-12">
+        </div>
+        {/* Challenges Section */}
+        <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12">
             <h1 className="text-5xl font-bold mb-4">Challenges</h1>
             <ul className="text-lg leading-relaxed space-y-4">
                 <li className="flex items-start">
@@ -345,14 +348,13 @@ const ReachOut = () => {
             </ul>
         </section>
 
-        {/* Carousel Instead of Static Images */}
+        {/* Carousel Challenge */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-          <div className="col-span-1 sm:col-span-2 lg:col-span-3 relative w-full max-w-5xl mx-auto py-12">
-            <div className="relative flex items-center justify-center h-[350px]">
-              {carouselImages.map((image, index) => {
+        <div className="col-span-1 sm:col-span-2 lg:col-span-3 relative w-full max-w-6xl mx-auto py-16">
+            <div className="relative flex items-center justify-center h-[500px]">
+            {carouselImages.map((image, index) => {
                 const position =
-                  (index - currentIndex + carouselImages.length) %
-                  carouselImages.length;
+                (index - currentIndex + carouselImages.length) % carouselImages.length;
 
                 let transform = "";
                 let blur = "";
@@ -360,64 +362,68 @@ const ReachOut = () => {
                 let zIndex = 0;
 
                 if (position === 0) {
-                  // Center card
-                  transform = "translate-x-0 scale-100";
-                  blur = "blur-none";
-                  opacity = "opacity-100";
-                  zIndex = 20;
+                // Center card
+                transform = "translate-x-0 scale-100";
+                blur = "blur-none";
+                opacity = "opacity-100";
+                zIndex = 20;
                 } else if (position === 1 || position === carouselImages.length - 1) {
-                  // Side cards
-                  transform =
-                    position === 1 ? "translate-x-60 scale-75" : "-translate-x-60 scale-75";
-                  blur = "blur-md";
-                  opacity = "opacity-75";
-                  zIndex = 10;
+                // Side cards
+                transform =
+                    position === 1 ? "translate-x-72 scale-90" : "-translate-x-72 scale-90";
+                blur = "blur-md";
+                opacity = "opacity-75";
+                zIndex = 10;
                 } else {
-                  // Hidden cards
-                  transform = "translate-x-0 scale-50";
-                  blur = "blur-lg";
-                  opacity = "opacity-0";
-                  zIndex = 0;
+                // Hidden cards
+                transform = "translate-x-0 scale-70";
+                blur = "blur-lg";
+                opacity = "opacity-0";
+                zIndex = 0;
                 }
 
                 return (
-                  <div
+                <div
                     key={image.id}
                     className={`absolute transition-all duration-500 ease-in-out transform ${transform} ${blur} ${opacity}`}
                     style={{ zIndex }}
-                  >
-                    <div className="bg-white rounded-lg shadow-lg p-6 w-80 h-96 flex flex-col items-center text-center">
-                      <div className="w-28 h-28 mb-4">
+                >
+                    <div className="bg-white rounded-lg shadow-lg p-8 w-[384px] h-[480px] flex flex-col items-center text-center">
+                    <div className="w-36 h-36 mb-6">
                         <Image
-                          src={image.src}
-                          alt={image.alt}
-                          className="w-full h-full object-cover"
+                        src={image.src}
+                        alt={image.alt}
+                        className="w-full h-full object-cover"
                         />
-                      </div>
-                      <h3 className="text-xl font-semibold">{image.issue}</h3>
-                      <p className="text-sm text-gray-500 mb-4">{image.type}</p>
-                      <p className="text-sm text-spaceCadet-700">{image.sum}</p>
-                      <Image src={logo} alt="reachout logo" className="w-10 h-10 mt-5 p-2 bg-ylnMnBlue bg-opacity-10 rounded-full" />
                     </div>
-                  </div>
+                    <h3 className="text-2xl font-semibold">{image.issue}</h3>
+                    <p className="text-base text-gray-500 mb-4">{image.type}</p>
+                    <p className="text-base text-spaceCadet-700">{image.sum}</p>
+                    <Image
+                        src={logo}
+                        alt="reachout logo"
+                        className="w-12 h-12 mt-6 p-2 bg-ylnMnBlue bg-opacity-10 rounded-full"
+                    />
+                    </div>
+                </div>
                 );
-              })}
+            })}
             </div>
 
             {/* Nav buttons */}
             <button
-              onClick={handlePrev}
-              className="absolute top-1/2 left-96 transform -translate-y-1/2 bg-gray-200 rounded-full p-3 hover:bg-gray-300 z-30"
+            onClick={handlePrev}
+            className="absolute top-1/2 left-16 sm:left-20 md:left-32 lg:left-96 transform -translate-y-1/2 bg-button rounded-full p-4 hover:bg-button2 z-30 opacity-80"
             >
-              &#8594;
+            &#8594;
             </button>
             <button
-              onClick={handleNext}
-              className="absolute top-1/2 right-96 transform -translate-y-1/2 bg-gray-200 rounded-full p-3 hover:bg-gray-300 z-30"
+            onClick={handleNext}
+            className="absolute top-1/2 right-16 sm:right-20 md:right-32 lg:right-96 transform -translate-y-1/2 bg-button rounded-full p-4 hover:bg-button2 z-30 opacity-80"
             >
-              &#8592;
+            &#8592;
             </button>
-          </div>
+        </div>
         </div>
       </main>
 
