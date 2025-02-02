@@ -25,28 +25,16 @@ const HomePage = () => {
       link: "/home", 
     },
     {
-      name: "Mechanical Object Illustrator",
+      name: "Flick Cafe",
       description: "Description for Project 4",
       image: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
       link: "/home", 
     },
     {
-      name: "Soda Can Design Photoshop",
+      name: "Quack Attack",
       description: "Description for Project 5",
       image: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
-      link: "/home", 
-    },
-    {
-        name: "Project 6",
-        description: "Description for Project 6",
-        image: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
-        link: "/home", 
-    },
-    {
-        name: "Project 7",
-        description: "Description for Project 7",
-        image: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
-        link: "/home", 
+      link: "/quackattack", 
     },
   ];
 
