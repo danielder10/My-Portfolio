@@ -19,22 +19,22 @@ const HomePage = () => {
       link: "/pine", 
     },
     {
-      name: "VT Japan Fest",
-      description: "Description for Project 3",
-      image: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
-      link: "/home", 
+      name: "Quack Attack",
+      description: "A metroidvania platformer where a heroic duck battles Chef Louis to save the farm.",
+      image: "/Mockup3.png",
+      link: "/quackattack", 
     },
     {
-      name: "Flick Cafe",
+      name: "VT Japan Fest",
       description: "Description for Project 4",
       image: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
       link: "/home", 
     },
     {
-      name: "Quack Attack",
+      name: "Flick Cafe",
       description: "Description for Project 5",
       image: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
-      link: "/quackattack", 
+      link: "/home", 
     },
   ];
 
