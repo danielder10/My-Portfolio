@@ -12,12 +12,6 @@ import designThree from "../public/color.png";
 import designFour from "../public/impact.png";
 import designFive from "../public/feature.png";
 import designSix from "../public/story.png";
-import challengeOne from "../public/hero.png";
-import challengeTwo from "../public/Mockup.png";
-import challengeThree from "../public/color.png";
-import challengeFour from "../public/impact.png";
-import challengeFive from "../public/feature.png";
-import challengeSix from "../public/story.png";
 import logo from "../public/rlogo.png"; 
 import competitorLogo from "../public/indeed.png";
 
@@ -29,7 +23,6 @@ const ReachOut = () => {
   };
 
   const [designCurrentIndex, setDesignCurrentIndex] = useState(0);
-  const [challengeCurrentIndex, setChallengeCurrentIndex] = useState(0);
 
   const handleDesignNext = () => {
     setDesignCurrentIndex(
@@ -42,20 +35,6 @@ const ReachOut = () => {
       (prevIndex) =>
         (prevIndex - 1 + designCarouselImages.length) %
         designCarouselImages.length
-    );
-  };
-
-  const handleChallengeNext = () => {
-    setChallengeCurrentIndex(
-      (prevIndex) => (prevIndex + 1) % challengeCarouselImages.length
-    );
-  };
-
-  const handleChallengePrev = () => {
-    setChallengeCurrentIndex(
-      (prevIndex) =>
-        (prevIndex - 1 + challengeCarouselImages.length) %
-        challengeCarouselImages.length
     );
   };
 
@@ -104,58 +83,6 @@ const ReachOut = () => {
       type: "Design Choice",
     },
   ];
-
-  const challengeCarouselImages = [
-    {
-      src: challengeOne,
-      alt: "Challenge 1",
-      id: 1,
-      issue: "Hero Section Challenge",
-      type: "Design Challenge",
-      sum: "Making the hero section visually striking while ensuring accessibility and clarity.",
-    },
-    {
-      src: challengeTwo,
-      alt: "Challenge 2",
-      id: 2,
-      issue: "Layout Challenge",
-      type: "Interface Challenge",
-      sum: "Designing a clean, intuitive layout that supports user navigation and responsiveness.",
-    },
-    {
-      src: challengeThree,
-      alt: "Challenge 3",
-      id: 3,
-      issue: "Color Palette Challenge",
-      type: "Design Challenge",
-      sum: "Balancing the color scheme for aesthetic appeal and readability across devices.",
-    },
-    {
-      src: challengeFour,
-      alt: "Challenge 4",
-      id: 4,
-      issue: "Impact Metrics Challenge",
-      type: "Interface Challenge",
-      sum: "Presenting dynamic metrics without overwhelming the user experience.",
-    },
-    {
-      src: challengeFive,
-      alt: "Challenge 5",
-      id: 5,
-      issue: "Interactive Features Challenge",
-      type: "Design Challenge",
-      sum: "Ensuring progress tracking and job-matching visuals are engaging and functional.",
-    },
-    {
-      src: challengeSix,
-      alt: "Challenge 6",
-      id: 6,
-      issue: "Storytelling Challenge",
-      type: "Design Challenge",
-      sum: "Creating a seamless carousel of user success stories with compelling visuals.",
-    },
-  ];
-  
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -367,6 +294,38 @@ const ReachOut = () => {
             </button>
         </div>
         </div>
+        {/* User Flow Section */}
+        <section className="px-4 py-12 ">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-5xl font-bold mb-4">User Flow</h2>
+            <p className="text-lg text-gray-700 mb-6">
+              Explore the structured journey users take through ReachOut, from onboarding to job application, with an interactive user flow diagram.
+            </p>
+
+            {/* Figma Embed */}
+            <div className="relative w-full h-[600px] border border-gray-300 rounded-lg overflow-hidden">
+              <iframe
+                src="https://www.figma.com/board/QQ7OsXhkE0rXtvPwP21aOx/User-Flow---ReachOut?node-id=0-1&t=kvoQ6dR9m7Omfgg7-1"
+                width="100%"
+                height="100%"
+                className="rounded-lg"
+              />
+            </div>
+
+            {/* Button to Open in New Tab */}
+            <div className="mt-6">
+              <a
+                href="https://www.figma.com/board/QQ7OsXhkE0rXtvPwP21aOx/User-Flow---ReachOut?node-id=0-1&t=kvoQ6dR9m7Omfgg7-1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-blue-600 text-white text-lg font-semibold rounded-lg hover:bg-blue-700"
+              >
+                Open in Figma
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* Challenges Section */}
         <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12">
             <h1 className="text-5xl font-bold mb-4">Challenges</h1>
@@ -415,80 +374,55 @@ const ReachOut = () => {
                 </li>
             </ul>
         </section>
-
-        {/* Carousel Challenge */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-        <div className="col-span-1 sm:col-span-2 lg:col-span-3 relative w-full max-w-6xl mx-auto py-16">
-            <div className="relative flex items-center justify-center h-[500px]">
-            {challengeCarouselImages.map((image, index) => {
-                const position =
-                    (index - challengeCurrentIndex + challengeCarouselImages.length) %
-                    challengeCarouselImages.length;
-
-                let transform = "";
-                let blur = "";
-                let opacity = "";
-                let zIndex = 0;
-
-                if (position === 0) {
-                    transform = "translate-x-0 scale-100";
-                    blur = "blur-none";
-                    opacity = "opacity-100";
-                    zIndex = 20;
-                } else if (position === 1 || position === challengeCarouselImages.length - 1) {
-                    transform = position === 1 ? "translate-x-72 scale-90" : "-translate-x-72 scale-90";
-                    blur = "blur-md";
-                    opacity = "opacity-75";
-                    zIndex = 10;
-                } else {
-                    transform = "translate-x-0 scale-70";
-                    blur = "blur-lg";
-                    opacity = "opacity-0";
-                    zIndex = 0;
-                }
-
-                return (
-                  <div
-                  key={image.id}
-                  className={`absolute transition-all duration-500 ease-in-out transform ${transform} ${blur} ${opacity}`}
-                  style={{ zIndex }}
-              >
-                  <div className="bg-white rounded-lg shadow-lg p-8 w-[384px] h-[480px] flex flex-col items-center text-center">
-                  <div className="w-[300px] h-[200px] mb-6">
-                      <Image
-                      src={image.src}
-                      alt={image.alt}
-                      className="w-full h-full object-cover mt-14"
-                      />
-                  </div>
-                  <h3 className="text-2xl font-semibold mt-14">{image.issue}</h3>
-                  <p className="text-base text-gray-500 mb-4">{image.type}</p>
-                  <Image
-                      src={logo}
-                      alt="reachout logo"
-                      className="w-12 h-12 mt-6 p-2 bg-ylnMnBlue bg-opacity-10 rounded-full"
-                  />
-                  </div>
-              </div>
-                );
-            })}
-            </div>
-
-            {/* Nav buttons */}
-            <button
-            onClick={handleChallengePrev}
-            className="absolute top-1/2 left-16 sm:left-20 md:left-32 lg:left-96 transform -translate-y-1/2 bg-button rounded-full p-4 hover:bg-button2 z-30 opacity-80"
-            >
-            &#8594;
-            </button>
-            <button
-            onClick={handleChallengeNext}
-            className="absolute top-1/2 right-16 sm:right-20 md:right-32 lg:right-96 transform -translate-y-1/2 bg-button rounded-full p-4 hover:bg-button2 z-30 opacity-80"
-            >
-            &#8592;
-            </button>
-        </div>
-        </div>
+      {/* Solutions Section */}
+      <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12">
+            <h1 className="text-5xl font-bold mb-4">Solutions</h1>
+            <ul className="text-lg leading-relaxed space-y-4">
+                <li className="flex items-start">
+                    <span className="text-xl font-semibold mr-2">1.</span>
+                    <div>
+                        <strong>Welcoming Hero Section:</strong> 
+                        To make the hero section both engaging and effective, we designed it with a bold, clear call-to-action and a powerful visual that communicates trust and inclusivity. The messaging was carefully crafted to immediately capture user interest, and the layout ensures that key elements—such as the CTA button—are easy to find and interact with.
+                    </div>
+                </li>
+                <li className="flex items-start">
+                    <span className="text-xl font-semibold mr-2">2.</span>
+                    <div>
+                        <strong>Clean Layout:</strong> 
+                        The interface was structured with a focus on clarity and ease of navigation. Sections were distinctly separated, and whitespace was utilized effectively to prevent clutter. Responsive design principles were applied to maintain consistency across different screen sizes, ensuring an intuitive experience for all users.
+                    </div>
+                </li>
+                <li className="flex items-start">
+                    <span className="text-xl font-semibold mr-2">3.</span>
+                    <div>
+                        <strong>Consistent Color Scheme:</strong> 
+                        We carefully selected a calming yet professional color palette that aligns with ReachOut’s mission. The colors were tested for accessibility, ensuring high contrast for readability and an overall sense of trustworthiness. The design follows brand identity principles while being inclusive for users with visual impairments.
+                    </div>
+                </li>
+                <li className="flex items-start">
+                    <span className="text-xl font-semibold mr-2">4.</span>
+                    <div>
+                        <strong>Impact Highlights:</strong> 
+                        Key statistics such as "2000+ job seekers placed" and "500+ nonprofit organizations engaged" were integrated into the interface to provide credibility. The data visualization was designed to be digestible, balancing informative elements with aesthetic appeal. By placing these metrics strategically, users can quickly grasp the impact of the platform.
+                    </div>
+                </li>
+                <li className="flex items-start">
+                    <span className="text-xl font-semibold mr-2">5.</span>
+                    <div>
+                        <strong>Interactive Features:</strong> 
+                        The job-matching process was enhanced with AI-powered recommendations, providing personalized job suggestions based on user profiles. A user-friendly dashboard was implemented for progress tracking, ensuring that individuals can monitor their applications and career development effectively.
+                    </div>
+                </li>
+                <li className="flex items-start">
+                    <span className="text-xl font-semibold mr-2">6.</span>
+                    <div>
+                        <strong>Success Stories:</strong> 
+                        To humanize the platform and build trust, we incorporated a dynamic testimonial carousel. This section highlights real-life stories from individuals who successfully transitioned into employment through ReachOut. The design ensures smooth transitions between stories, keeping users engaged without overwhelming them with excessive content.
+                    </div>
+                </li>
+            </ul>
+        </section>
+        {/* Comp Analysis section */}
         <section className="px-4 py-12 bg-white">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-5xl font-bold mb-4">Competitor Analysis</h2>
@@ -530,6 +464,44 @@ const ReachOut = () => {
                 />
                 <h3 className="text-xl font-semibold text-gray-800">Indeed</h3>
               </div>
+            </div>
+          </div>
+        </section>
+        {/* New Section - PDF Display */}
+        <section className="px-4 py-12">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-5xl font-bold mb-4">User Research Findings</h2>
+            <p className="text-lg text-gray-700 mb-6">
+              Explore our research insights on job-seeking challenges and solutions for ex-offenders.
+            </p>
+            
+            {/* Embedded PDF Viewer */}
+            <div className="relative w-full h-[600px] border overflow-hidden">
+              <iframe
+                src="/user_research.pdf"
+                width="100%"
+                height="100%"
+                className="rounded-lg"
+              />
+            </div>
+          </div>
+        </section>
+        {/* New Section - PDF Display */}
+        <section className="px-4 py-12">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-5xl font-bold mb-4">User Personas</h2>
+            <p className="text-lg text-gray-700 mb-6">
+            Gain insights into our detailed user personas, representing the key stakeholders and their unique challenges, motivations, and behaviors in the job-seeking process.
+            </p>
+            
+            {/* Embedded PDF Viewer */}
+            <div className="relative w-full h-[600px] border overflow-hidden">
+              <iframe
+                src="/user_persona.pdf"
+                width="100%"
+                height="100%"
+                className="rounded-lg"
+              />
             </div>
           </div>
         </section>
