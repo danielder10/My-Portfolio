@@ -19,6 +19,7 @@ import challengeFour from "../public/impact.png";
 import challengeFive from "../public/feature.png";
 import challengeSix from "../public/story.png";
 import logo from "../public/rlogo.png"; 
+import competitorLogo from "../public/indeed.png";
 
 const ReachOut = () => {
   const router = useRouter();
@@ -73,7 +74,6 @@ const ReachOut = () => {
       id: 2,
       issue: "Mockup Presentation",
       type: "Design Choice",
-      sum: "Detailed mockups showcasing the app's main features, such as the quiz and recommendation sections.",
     },
     {
       src: designThree,
@@ -81,7 +81,6 @@ const ReachOut = () => {
       id: 3,
       issue: "Color Palette",
       type: "Design Choice",
-      sum: "A soothing pastel green and grey color scheme for a professional and calming user experience.",
     },
     {
       src: designFour,
@@ -89,7 +88,6 @@ const ReachOut = () => {
       id: 4,
       issue: "Impact Metrics",
       type: "Interface",
-      sum: "Highlighting app success metrics like '100+ recipes shared' and '50+ restaurants partnered.'",
     },
     {
       src: designFive,
@@ -97,7 +95,6 @@ const ReachOut = () => {
       id: 5,
       issue: "Feature Highlights",
       type: "Interface",
-      sum: "Interactive features, including a carousel for personalized recommendations and recipe ideas.",
     },
     {
       src: designSix,
@@ -105,7 +102,6 @@ const ReachOut = () => {
       id: 6,
       issue: "Storytelling",
       type: "Design Choice",
-      sum: "Visual storytelling elements showcasing user journeys and success stories with engaging graphics.",
     },
   ];
 
@@ -193,16 +189,16 @@ const ReachOut = () => {
             <div className="flex-1">
               <h2 className="text-3xl font-bold mb-6">Introduction</h2>
               <p className="text-lg leading-relaxed text-left text-gray-700 mb-2">
-              At ReachOut, we are developing an innovative application designed to address the critical challenge of reintegration for individuals impacted by incarceration. The project focuses on creating meaningful pathways to employment, fostering a smoother transition back into society, and reducing recidivism through empowerment and opportunity.
+              At ReachOut, we are building an innovative application to tackle the pressing challenge of reintegration for individuals impacted by incarceration. Our mission is to create meaningful pathways to employment, empower individuals in their transition back into society, and reduce recidivism by fostering opportunity and support.
               </p>
               <p className="text-lg leading-relaxed text-left text-gray-700 mb-2">
-              Our app harnesses the power of artificial intelligence to match users with job opportunities that align with their unique skills and experiences. By incorporating personalized recommendations and easy access to resources, we aim to bridge the gap between individuals seeking employment and organizations committed to second-chance hiring.
+              The app leverages artificial intelligence to connect users with job opportunities tailored to their unique skills and experiences. By providing personalized recommendations and seamless access to resources, ReachOut bridges the gap between individuals seeking employment and organizations committed to second-chance hiring.
               </p>
               <p className="text-lg leading-relaxed text-left text-gray-700 mb-2">
-              Through partnerships with forward-thinking employers and community stakeholders, this project aspires to provide users with not only job opportunities but also the confidence and tools to rebuild their lives and make positive contributions to their communities.
+              In collaboration with forward-thinking employers and community partners, ReachOut goes beyond job placement to instill confidence and equip users with the tools needed to rebuild their lives and contribute positively to their communities.
               </p>
               <p className="text-lg leading-relaxed text-left text-gray-700 mb-2">
-              This initiative represents a step toward fostering inclusivity and social impact by creating a future where everyone has the chance to succeed.
+              This project embodies our commitment to inclusivity and social impact, working toward a future where everyone has the opportunity to thrive.
               </p>
             </div>
 
@@ -243,7 +239,13 @@ const ReachOut = () => {
               />
             </div>
           </div>
-
+        {/* Problem Statement Section */}
+          <section className="text-center py-8 bg-white">
+            <h2 className="text-5xl font-bold mb-4">Problem Statement</h2>
+            <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto text-left">
+            Individuals impacted by incarceration face significant challenges in reintegrating into society, including limited access to employment opportunities, social stigma, and a lack of resources tailored to their unique needs. These barriers not only hinder personal growth and financial stability but also contribute to higher rates of recidivism, perpetuating cycles of disadvantage. Employers, on the other hand, often struggle to find and connect with skilled individuals willing to contribute meaningfully, particularly within second-chance hiring initiatives. There is a critical need for a solution that bridges this gap, empowering individuals to rebuild their lives while enabling organizations to embrace more inclusive hiring practices.
+            </p>
+          </section>
         {/* Interface + Design Choice Section */}
         <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12">
             <h1 className="text-5xl font-bold mb-4">Interface and Design Choices</h1>
@@ -330,16 +332,15 @@ const ReachOut = () => {
                     style={{ zIndex }}
                 >
                     <div className="bg-white rounded-lg shadow-lg p-8 w-[384px] h-[480px] flex flex-col items-center text-center">
-                    <div className="w-36 h-36 mb-6">
+                    <div className="w-[300px] h-[200px] mb-6">
                         <Image
                         src={image.src}
                         alt={image.alt}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover mt-14"
                         />
                     </div>
-                    <h3 className="text-2xl font-semibold">{image.issue}</h3>
+                    <h3 className="text-2xl font-semibold mt-14">{image.issue}</h3>
                     <p className="text-base text-gray-500 mb-4">{image.type}</p>
-                    <p className="text-base text-spaceCadet-700">{image.sum}</p>
                     <Image
                         src={logo}
                         alt="reachout logo"
@@ -447,29 +448,28 @@ const ReachOut = () => {
                 }
 
                 return (
-                <div
-                    key={image.id}
-                    className={`absolute transition-all duration-500 ease-in-out transform ${transform} ${blur} ${opacity}`}
-                    style={{ zIndex }}
-                >
-                    <div className="bg-white rounded-lg shadow-lg p-8 w-[384px] h-[480px] flex flex-col items-center text-center">
-                    <div className="w-36 h-36 mb-6">
-                        <Image
-                        src={image.src}
-                        alt={image.alt}
-                        className="w-full h-full object-cover"
-                        />
-                    </div>
-                    <h3 className="text-2xl font-semibold">{image.issue}</h3>
-                    <p className="text-base text-gray-500 mb-4">{image.type}</p>
-                    <p className="text-base text-spaceCadet-700">{image.sum}</p>
-                    <Image
-                        src={logo}
-                        alt="reachout logo"
-                        className="w-12 h-12 mt-6 p-2 bg-ylnMnBlue bg-opacity-10 rounded-full"
-                    />
-                    </div>
-                </div>
+                  <div
+                  key={image.id}
+                  className={`absolute transition-all duration-500 ease-in-out transform ${transform} ${blur} ${opacity}`}
+                  style={{ zIndex }}
+              >
+                  <div className="bg-white rounded-lg shadow-lg p-8 w-[384px] h-[480px] flex flex-col items-center text-center">
+                  <div className="w-[300px] h-[200px] mb-6">
+                      <Image
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-full object-cover mt-14"
+                      />
+                  </div>
+                  <h3 className="text-2xl font-semibold mt-14">{image.issue}</h3>
+                  <p className="text-base text-gray-500 mb-4">{image.type}</p>
+                  <Image
+                      src={logo}
+                      alt="reachout logo"
+                      className="w-12 h-12 mt-6 p-2 bg-ylnMnBlue bg-opacity-10 rounded-full"
+                  />
+                  </div>
+              </div>
                 );
             })}
             </div>
@@ -489,6 +489,50 @@ const ReachOut = () => {
             </button>
         </div>
         </div>
+        <section className="px-4 py-12 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-5xl font-bold mb-4">Competitor Analysis</h2>
+            <div className="flex flex-col lg:flex-row items-start gap-8">
+              <div className="flex-1">
+                <h3 className="text-2xl font-semibold text-gray-800 mb-4">Indeed</h3>
+                <p className="text-base text-gray-600 mb-6">
+                A global job search platform that connects employers with job seekers, offering tools for job postings, resume uploads, and company reviews.
+                </p>
+                <h4 className="text-lg font-semibold text-gray-800 mb-4">Features:</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">→</span>
+                    <p className="text-base text-gray-600">
+                    <strong>Job Search Functionality:</strong> Both platforms allow users to search for jobs tailored to their skills and preferences.
+                    </p>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">→</span>
+                    <p className="text-base text-gray-600">
+                    <strong>Resume Uploads:</strong> Users can upload or create resumes to share with potential employers.
+                    </p>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">→</span>
+                    <p className="text-base text-gray-600">
+                    <strong>Application Tracking:</strong> A feature to track job applications and statuses.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div className="flex-1 flex flex-col items-center">
+                <Image
+                  src={competitorLogo}
+                  alt="OlaShare Logo"
+                  width={150}
+                  height={150}
+                  className="mb-4 mt-14"
+                />
+                <h3 className="text-xl font-semibold text-gray-800">Indeed</h3>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* Footer */}

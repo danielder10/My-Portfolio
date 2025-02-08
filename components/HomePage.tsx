@@ -7,10 +7,10 @@ import ProjectCard from "@/components/Project";
 const HomePage = () => {
   const projects = [
     {
-      name: "Reach Out",
-      description: "A Responsive Web App Supporting Justice-Impacted individuals in finding employment",
-      image: "/Mockup.png",
-      link: "/reachout", 
+      name: "Flick Cafe",
+      description: "Description for Project 5",
+      image: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
+      link: "/home", 
     },
     {
       name: "PINE",
@@ -25,14 +25,14 @@ const HomePage = () => {
       link: "/quackattack", 
     },
     {
-      name: "VT Japan Fest",
-      description: "Description for Project 4",
-      image: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
-      link: "/home", 
+      name: "Reach Out",
+      description: "A Responsive Web App Supporting Justice-Impacted individuals in finding employment",
+      image: "/Mockup.png",
+      link: "/reachout", 
     },
     {
-      name: "Flick Cafe",
-      description: "Description for Project 5",
+      name: "VT Japan Fest",
+      description: "Description for Project 4",
       image: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
       link: "/home", 
     },

@@ -28,9 +28,15 @@ const LandingPage: React.FC = () => {
       "InDesign",
       "VS Code",
       "GitHub",
+      "Tailwind CSS", 
+      "Typescript", 
+      "JavaScript", 
+      "HTML", 
+      "HTML5", 
+      "CSS",
     ],
     "Adobe Design": ["Illustrator", "Photoshop", "After Effects", "InDesign"],
-    "Coded Web Designs": ["VS Code", "GitHub"],
+    "Coded Web Designs": ["VS Code", "GitHub", "Tailwind CSS", "Typescript", "JavaScript", "HTML", "HTML5", "CSS"],
     "Personal Projects": [
       "Adobe Designs",
       "Coded Designs",
@@ -64,7 +70,7 @@ const LandingPage: React.FC = () => {
               </p>
               <div className="flex justify-center lg:justify-start">
                 <Button
-                  text="Enter"
+                  text="View My Works!"
                   onClick={handleEnterClick}
                   type="primary"
                   className="w-auto"
