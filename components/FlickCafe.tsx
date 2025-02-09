@@ -6,14 +6,21 @@ import Button from "./Button";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Image, { StaticImageData } from "next/image";
-import designOne from "../public/pine-color.png";
-import designTwo from "../public/pine-logo.png";
-import designThree from "../public/pine-card.png";
-import designFour from "../public/pine-nav.png";
-import designFive from "../public/pine-button.png";
-import logo from "../public/pine-logo.png"; 
+import designOne from "../public/cafe-color.png";
+import designTwo from "../public/cafe-logo.png";
+import designThree from "../public/cafe-logo-sketch.png";
+import designFour from "../public/mood1.png";
+import designFive from "../public/mood2.png";
+import designSix from "../public/cafe-buttons.png";
+import logo from "../public/cafe-logo2.png"; 
+import screenOne from "../public/cafe-home.png";
+import screenTwo from "../public/cafe-menu.png";
+import screenThree from "../public/cafe-checkout.png";
+import screenFour from "../public/cafe-order-status.png";
+import screenFive from "../public/cafe-contact.png";
+import screenSix from "../public/cafe-screening.png";
 
-const Pine = () => {
+const FlickCafe = () => {
   const router = useRouter();
 
   const handleEnterClick = () => {
@@ -60,7 +67,7 @@ const Pine = () => {
       alt: "success story 3",
       id: 3,
       issue: "Consistent Color Scheme",
-      type: "'Dish Card'",
+      type: "Logo Sketches",
       sum:
         "Highlighting a soothing green and grey palette, applied cohesively across buttons, backgrounds, and headings.",
     },
@@ -69,7 +76,7 @@ const Pine = () => {
       alt: "success story 4",
       id: 4,
       issue: "Impact Highlights",
-      type: "Nav Icons",
+      type: "Mood Board",
       sum:
         "A visually appealing infographic / dashboard displaying '2000+ job seekers placed' and '500+ nonprofit organizations engaged.'",
     },
@@ -78,11 +85,59 @@ const Pine = () => {
       alt: "success story 5",
       id: 5,
       issue: "Interactive Features",
+      type: "Mood Board",
+      sum:
+        "Buttons indicating user interactivity capabilities, alongside progress bars or job-matching visuals in action are clearly visible.",
+    },
+    {
+      src: designSix,
+      alt: "success story 5",
+      id: 6,
+      issue: "Interactive Features",
       type: "Buttons",
       sum:
         "Buttons indicating user interactivity capabilities, alongside progress bars or job-matching visuals in action are clearly visible.",
     },
   ];
+
+  const screenImages = [
+    {
+      src: screenOne,
+      alt: "success story 1",
+      id: 1,
+      type: "Home Screen",
+    },
+    {
+      src: screenTwo,
+      alt: "success story 1",
+      id: 2,
+      type: "Menu Screen",
+    },
+    {
+      src: screenThree,
+      alt: "success story 1",
+      id: 3,
+      type: "Checkout Screen",
+    },
+    {
+      src: screenFour,
+      alt: "success story 1",
+      id: 4,
+      type: "Order Success Screen",
+    },
+    {
+      src: screenFive,
+      alt: "success story 1",
+      id: 5,
+      type: "Contact Screen",
+    },
+    {
+      src: screenSix,
+      alt: "success story 1",
+      id: 6,
+      type: "Movie Section Screen",
+    },
+  ]
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -94,16 +149,16 @@ const Pine = () => {
         <div className="text-center"/>
           {/* Centered and Resized Image */}
           <img
-            src="/pine-mockup.png"
-            alt="Pine Mockup"
+            src="/Mockup4.png"
+            alt="Flick Cafe Mockup"
             className="mx-auto w-3/4 md:w-2/3 lg:w-1/2 h-auto mb-6"
           />
 
           {/* Description Section */}
           <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12">
-            <h1 className="text-5xl font-bold mb-4">Pine</h1>
+            <h1 className="text-5xl font-bold mb-4">Flick Cafe</h1>
             <p className="text-lg leading-relaxed">
-              PINE is an innovative food app designed to simplify meal decisions by combining location-based restaurant suggestions and personalized recipe recommendations. By leveraging user preferences and available ingredients, PINE helps reduce food waste while providing convenient options for dining out or cooking at home. It merges the best of food delivery services and recipe finders into one seamless platform.
+            Flick Cafe is a coffee shop and cinema hybrid in Burnaby that combines 1920s art deco charm with a modern vibe. It offers freshly brewed coffee, classic movie snacks, and nightly film screenings, with weekend polls letting customers choose the movie. Perfect for movie lovers and coffee enthusiasts, Flick Cafe creates a unique and welcoming space for all ages to relax and enjoy.
             </p>
           </section>
 
@@ -113,7 +168,7 @@ const Pine = () => {
             <div className="flex-1">
               <h2 className="text-3xl font-bold mb-6">Introduction</h2>
               <p className="text-lg leading-relaxed text-left text-gray-700 mb-2">
-              For this project, I collaborated with one other team member over the course of 20 weeks to develop a fully coded web app. Our goal was to create an application that implemented APIs and dynamic content, delivering an interactive, app-like final product.
+              For this project, I collaborated with three other team member over the course of 20 weeks to develop a fully coded web app. Our goal was to create an application that implemented APIs and dynamic content, delivering an interactive, app-like final product.
               </p>
               <p className="text-lg leading-relaxed text-left text-gray-700 mb-2">
               PINE was the result of this effort, showcasing a seamless integration of functionality and design while addressing real-world challenges through innovative solutions. The project emphasized user experience, responsive design, and efficient use of APIs to deliver a polished, functional application.
@@ -124,34 +179,23 @@ const Pine = () => {
             <div className="flex-1 text-center items-center justify-center lg:ml-8">
               <h2 className="text-3xl text-center font-bold">Date</h2>
               <p className="text-lg text-center leading-relaxed text-gray-700 mt-1 mb-3">
-                January-May 2024
+                October-December 2024
                 <br />
               </p>
               <h2 className="text-3xl text-center font-bold">Role</h2>
               <p className="text-lg leading-relaxed text-gray-700 mt-1 mb-3 text-left md:text-center">
                 UI/UX Designer
                 <br />
-                Frontend Developer
-                <br />
-                Research Analyst
-                <br/>
-                Project Manager
               </p>
               <h2 className="text-3xl text-center font-bold">Skills</h2>
               <p className="text-lg leading-relaxed text-gray-700 mt-1 mb-3 text-left md:text-center">
                 User Research
                 <br />
-                Javascript
-                <br></br>
-                Next.js / React
-                <br />
                 Figma
-                <br />
-                API Integration
               </p>
               <Button
-                text="Visit The PINE App!"
-                onClick={() => window.open("https://pine-app.vercel.app", "_blank")}
+                text="View The prototype!"
+                onClick={() => window.open("https://www.figma.com/proto/qMNoFwA4s0f5TG1hRUvLny/FlickCafe---Set-G-(Copy)?node-id=1438-773&p=f&t=SzmonO9W0z2uQoLa-1&scaling=scale-down&content-scaling=fixed&page-id=1438%3A583&starting-point-node-id=1438%3A773", "_blank")}
                 type="primary"
                 className="w-auto text-center items-center justify-center"
               />
@@ -202,12 +246,12 @@ const Pine = () => {
                     className={`absolute transition-all duration-500 ease-in-out transform ${transform} ${blur} ${opacity}`}
                     style={{ zIndex }}
                 >
-                    <div className="bg-white rounded-lg shadow-lg p-8 w-[384px] h-[480px] flex flex-col items-center text-center">
-                    <div className="w- [300px] h-[400px] mb-6">
+                    <div className="bg-white rounded-lg shadow-lg p-8 w-[500px] h-[600px] flex flex-col items-center text-center">
+                    <div className="relative w-[480px] h-[400px] mb-6">
                         <Image
                         src={image.src}
                         alt={image.alt}
-                        className="items-center justify-center"
+                        className="items-center justify-center object-cover w-full h-full rounded-lg"
                         />
                     </div>
                     <h3 className="text-base text-gray-500 font-bold mb-4">{image.type}</h3>
@@ -237,40 +281,54 @@ const Pine = () => {
             </button>
         </div>
         </div>
-              {/* New Section - PDF Display */}
+    {/* Our Screens Section */}
       <section className="px-4 py-12">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl font-bold mb-4">Figma Prototype</h2>
+            <h2 className="text-5xl font-bold mb-4">Our Screens</h2>
             <p className="text-lg text-gray-700 mb-6">
-              Explore our Prototype Built On Figma.
+              View Our Designs
             </p>
             
-            {/* Embedded PDF Viewer */}
-            <div className="relative w-full h-[600px] border overflow-hidden">
-              <iframe
-                src="https://www.figma.com/proto/uAm1ofX4ebDsHBJSgyXpCz/MDIA-2106-%E2%80%93-Pine-SET-G?node-id=5-7&p=f&t=AGC9Jq13VpzGqHP0-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A7"
-                width="100%"
-                height="100%"
-                className="rounded-lg"
-              />
-            </div>
-            <br></br>
-            <a
-              href="https://www.figma.com/proto/uAm1ofX4ebDsHBJSgyXpCz/MDIA-2106-%E2%80%93-Pine-SET-G?node-id=5-7&p=f&t=AGC9Jq13VpzGqHP0-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-blue-600 text-white text-lg font-semibold rounded-lg hover:bg-blue-700"
-            >
-              Open in Figma
-            </a>
           </div>
+         {/* Animated Vertical Scrolling Display */}
+         <div className="relative w-[500px] h-[800px] overflow-hidden rounded-lg p-4 items-center justify-center">
+          <div className="absolute flex flex-col items-center gap-8 animate-scroll">
+            {screenImages.map((image, index) => (
+              <div key={index} className="flex flex-col items-center">
+                <div className="relative w-[450px] h-[500px]">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    className="object-cover w-full h-full rounded-lg shadow-md"
+                  />
+                </div>
+                <p className="text-gray-700 text-center mt-2">{image.type}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         </section>
       </main>
 
       {/* Footer */}
       <Footer />
+      <style jsx>{`
+        .animate-scroll {
+          animation: scroll 12s linear infinite;
+        }
+
+        @keyframes scroll {
+          0% {
+            transform: translateY(0);
+          }
+          100% {
+            transform: translateY(-100%);
+          }
+        }
+      `}</style>
     </div>
   );
 };
 
-export default Pine;
+export default FlickCafe;

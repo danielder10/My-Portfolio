@@ -8,9 +8,9 @@ const HomePage = () => {
   const projects = [
     {
       name: "Flick Cafe",
-      description: "Description for Project 5",
-      image: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
-      link: "/home", 
+      description: "A 1920s art deco cafe blending coffee, cinema, and classic movie vibes.",
+      image: "/Mockup4.png",
+      link: "/flickcafe", 
     },
     {
       name: "PINE",
