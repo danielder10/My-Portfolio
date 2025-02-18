@@ -173,6 +173,126 @@ const ReachOut = () => {
             Individuals impacted by incarceration face significant challenges in reintegrating into society, including limited access to employment opportunities, social stigma, and a lack of resources tailored to their unique needs. These barriers not only hinder personal growth and financial stability but also contribute to higher rates of recidivism, perpetuating cycles of disadvantage. Employers, on the other hand, often struggle to find and connect with skilled individuals willing to contribute meaningfully, particularly within second-chance hiring initiatives. There is a critical need for a solution that bridges this gap, empowering individuals to rebuild their lives while enabling organizations to embrace more inclusive hiring practices.
             </p>
           </section>
+          {/* User Flow Section */}
+        <section className="px-4 py-12 ">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-5xl font-bold mb-4">User Flow</h2>
+            <p className="text-lg text-gray-700 mb-6">
+              Explore the structured journey users take through ReachOut, from onboarding to job application, with an interactive user flow diagram.
+            </p>
+
+            {/* Figma Embed */}
+            <div className="relative w-full max-w-3xl mx-auto">
+            <Image
+                src={"/reachout-userflow.png"}
+                alt="ReachOut User Flow"
+                layout="responsive"
+                width={800}
+                height={600}
+                className="rounded-lg border border-gray-300 shadow-md"
+              />
+            </div>
+
+            {/* Button to Open in New Tab */}
+            <div className="mt-6">
+              <a
+                href="https://www.figma.com/board/QQ7OsXhkE0rXtvPwP21aOx/User-Flow---ReachOut?node-id=0-1&t=kvoQ6dR9m7Omfgg7-1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-blue-600 text-white text-lg font-semibold rounded-lg hover:bg-blue-700"
+              >
+                Open in Figma
+              </a>
+            </div>
+          </div>
+        </section>
+
+{/* Comp Analysis section */}
+<section className="px-4 py-12 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-5xl font-bold mb-4">Competitor Analysis</h2>
+            <div className="flex flex-col lg:flex-row items-start gap-8">
+              <div className="flex-1">
+                <h3 className="text-2xl font-semibold text-gray-800 mb-4">Indeed</h3>
+                <p className="text-base text-gray-600 mb-6">
+                A global job search platform that connects employers with job seekers, offering tools for job postings, resume uploads, and company reviews.
+                </p>
+                <h4 className="text-lg font-semibold text-gray-800 mb-4">Features:</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">→</span>
+                    <p className="text-base text-gray-600">
+                    <strong>Job Search Functionality:</strong> Both platforms allow users to search for jobs tailored to their skills and preferences.
+                    </p>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">→</span>
+                    <p className="text-base text-gray-600">
+                    <strong>Resume Uploads:</strong> Users can upload or create resumes to share with potential employers.
+                    </p>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">→</span>
+                    <p className="text-base text-gray-600">
+                    <strong>Application Tracking:</strong> A feature to track job applications and statuses.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div className="flex-1 flex flex-col items-center">
+                <Image
+                  src={competitorLogo}
+                  alt="OlaShare Logo"
+                  width={150}
+                  height={150}
+                  className="mb-4 mt-14"
+                />
+                <h3 className="text-xl font-semibold text-gray-800">Indeed</h3>
+              </div>
+            </div>
+          </div>
+        </section>
+
+{/* New Section - PDF Display */}
+<section className="px-4 py-12">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-5xl font-bold mb-4">User Research Findings</h2>
+            <p className="text-lg text-gray-700 mb-6">
+              Explore our research insights on job-seeking challenges and solutions for ex-offenders.
+            </p>
+            
+            {/* Embedded PDF Viewer */}
+            <div className="relative w-full h-[600px] border overflow-hidden">
+            <embed
+              src="/user_research.pdf"
+              type="application/pdf"
+              width="100%"
+              height="600px"
+              className="rounded-lg border-none"
+            />
+            </div>
+          </div>
+        </section>
+        {/* New Section - PDF Display */}
+        <section className="px-4 py-12">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-5xl font-bold mb-4">User Personas</h2>
+            <p className="text-lg text-gray-700 mb-6">
+            Gain insights into our detailed user personas, representing the key stakeholders and their unique challenges, motivations, and behaviors in the job-seeking process.
+            </p>
+            
+            {/* Embedded PDF Viewer */}
+            <div className="relative w-full h-[600px] border overflow-hidden">
+              <embed
+                src="/user_persona.pdf"
+                width="100%"
+                height="100%"
+                className="rounded-lg"
+              />
+            </div>
+          </div>
+        </section>
+
         {/* Interface + Design Choice Section */}
         <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12">
             <h1 className="text-5xl font-bold mb-4">Interface and Design Choices</h1>
@@ -294,37 +414,6 @@ const ReachOut = () => {
             </button>
         </div>
         </div>
-        {/* User Flow Section */}
-        <section className="px-4 py-12 ">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl font-bold mb-4">User Flow</h2>
-            <p className="text-lg text-gray-700 mb-6">
-              Explore the structured journey users take through ReachOut, from onboarding to job application, with an interactive user flow diagram.
-            </p>
-
-            {/* Figma Embed */}
-            <div className="relative w-full h-[600px] border border-gray-300 rounded-lg overflow-hidden">
-              <iframe
-                src="https://www.figma.com/board/QQ7OsXhkE0rXtvPwP21aOx/User-Flow---ReachOut?node-id=0-1&t=kvoQ6dR9m7Omfgg7-1"
-                width="100%"
-                height="100%"
-                className="rounded-lg"
-              />
-            </div>
-
-            {/* Button to Open in New Tab */}
-            <div className="mt-6">
-              <a
-                href="https://www.figma.com/board/QQ7OsXhkE0rXtvPwP21aOx/User-Flow---ReachOut?node-id=0-1&t=kvoQ6dR9m7Omfgg7-1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 bg-blue-600 text-white text-lg font-semibold rounded-lg hover:bg-blue-700"
-              >
-                Open in Figma
-              </a>
-            </div>
-          </div>
-        </section>
 
         {/* Challenges Section */}
         <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12">
@@ -421,89 +510,6 @@ const ReachOut = () => {
                     </div>
                 </li>
             </ul>
-        </section>
-        {/* Comp Analysis section */}
-        <section className="px-4 py-12 bg-white">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-5xl font-bold mb-4">Competitor Analysis</h2>
-            <div className="flex flex-col lg:flex-row items-start gap-8">
-              <div className="flex-1">
-                <h3 className="text-2xl font-semibold text-gray-800 mb-4">Indeed</h3>
-                <p className="text-base text-gray-600 mb-6">
-                A global job search platform that connects employers with job seekers, offering tools for job postings, resume uploads, and company reviews.
-                </p>
-                <h4 className="text-lg font-semibold text-gray-800 mb-4">Features:</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <span className="text-blue-500 mr-2">→</span>
-                    <p className="text-base text-gray-600">
-                    <strong>Job Search Functionality:</strong> Both platforms allow users to search for jobs tailored to their skills and preferences.
-                    </p>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-500 mr-2">→</span>
-                    <p className="text-base text-gray-600">
-                    <strong>Resume Uploads:</strong> Users can upload or create resumes to share with potential employers.
-                    </p>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-500 mr-2">→</span>
-                    <p className="text-base text-gray-600">
-                    <strong>Application Tracking:</strong> A feature to track job applications and statuses.
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div className="flex-1 flex flex-col items-center">
-                <Image
-                  src={competitorLogo}
-                  alt="OlaShare Logo"
-                  width={150}
-                  height={150}
-                  className="mb-4 mt-14"
-                />
-                <h3 className="text-xl font-semibold text-gray-800">Indeed</h3>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* New Section - PDF Display */}
-        <section className="px-4 py-12">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl font-bold mb-4">User Research Findings</h2>
-            <p className="text-lg text-gray-700 mb-6">
-              Explore our research insights on job-seeking challenges and solutions for ex-offenders.
-            </p>
-            
-            {/* Embedded PDF Viewer */}
-            <div className="relative w-full h-[600px] border overflow-hidden">
-              <iframe
-                src="/user_research.pdf"
-                width="100%"
-                height="100%"
-                className="rounded-lg"
-              />
-            </div>
-          </div>
-        </section>
-        {/* New Section - PDF Display */}
-        <section className="px-4 py-12">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl font-bold mb-4">User Personas</h2>
-            <p className="text-lg text-gray-700 mb-6">
-            Gain insights into our detailed user personas, representing the key stakeholders and their unique challenges, motivations, and behaviors in the job-seeking process.
-            </p>
-            
-            {/* Embedded PDF Viewer */}
-            <div className="relative w-full h-[600px] border overflow-hidden">
-              <iframe
-                src="/user_persona.pdf"
-                width="100%"
-                height="100%"
-                className="rounded-lg"
-              />
-            </div>
-          </div>
         </section>
       </main>
 
