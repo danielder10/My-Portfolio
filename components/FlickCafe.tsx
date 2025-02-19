@@ -315,7 +315,7 @@ const FlickCafe = () => {
       <Footer />
       <style jsx>{`
         .animate-scroll {
-          animation: scroll 12s linear infinite;
+          animation: scroll 25s linear infinite;
         }
 
         @keyframes scroll {

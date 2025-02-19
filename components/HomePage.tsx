@@ -32,7 +32,19 @@ const HomePage = () => {
     },
     {
       name: "VT Japan Fest",
-      description: "Description for Project 4",
+      description: " Currently WIP {An Interactive Travel Guide For People Wanting To Explore Japan} ",
+      image: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
+      link: "/home", 
+    },
+    {
+      name: "Mechanical Object",
+      description: "Find On Behance As Well!",
+      image: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
+      link: "/home", 
+    },
+    {
+      name: "Soda Can Design",
+      description: "Find On Behance As Well!",
       image: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
       link: "/home", 
     },
@@ -41,8 +53,7 @@ const HomePage = () => {
   return (
     <div className="flex-grow flex flex-col min-h-screen bg-gray-50">
       <Header />
-
-      <main className="flex-grow flex flex-col items-center justify-center px-4">
+      <main className="flex-grow flex flex-col items-center justify-center px-4 mb-10">
         <section className="text-center py-10">
           <h1 className="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
           <p className="text-lg text-gray-600 mb-6">

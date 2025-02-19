@@ -16,7 +16,7 @@ const CategorySelector: React.FC<CategorySelectorProps> = ({
       {categories.map((category: string, index: number) => (
         <span
           key={index}
-          className="px-6 py-2 bg-purple-100 text-purple-800 font-semibold rounded-full shadow-md text-center hover:bg-purple-200 transition duration-300 cursor-pointer"
+          className="px-6 py-2 bg-coffee text-button font-semibold rounded-full shadow-md text-center hover:bg-button2 transition duration-300 cursor-pointer"
           onClick={() => onCategoryClick(category)}
         >
           {category}

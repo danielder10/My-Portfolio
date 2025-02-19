@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const router = useRouter();
 
@@ -25,11 +24,13 @@ const Header = () => {
   return (
     <header className="p-4 bg-coffee text-white mb-10">
       <div className="flex justify-between items-center">
-      <a
-                onClick={() => router.push('/')}
-                className="text-xl cursor-pointer"
-              >
-        <div className="text-2xl font-bold"><img src="/Logo.png" className="w-40 h-auto"></img></div>
+        <a
+          onClick={() => router.push('/')}
+          className="text-xl cursor-pointer"
+        >
+          <div className="text-2xl font-bold">
+            <img src="/Logo.png" className="w-40 h-auto" alt="Logo" />
+          </div>
         </a>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -61,7 +62,7 @@ const Header = () => {
                 onClick={() => router.push('/home')}
                 className="text-xl cursor-pointer"
               >
-                Home
+                My Works
               </a>
             </li>
             <li className="p-4">
@@ -72,59 +73,15 @@ const Header = () => {
                 About
               </a>
             </li>
-            <li className="p-4 relative">
-              <button
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-                className="text-xl cursor-pointer flex items-center"
+            <li className="p-4">
+              <a
+                href="https://www.behance.net/daniel_der"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl cursor-pointer"
               >
-                Subjects
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="w-4 h-4 ml-2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              {/* Dropdown Menu */}
-              {dropdownOpen && (
-                <ul className="absolute left-0 lg:left-auto lg:right-0 mt-2 lg:mt-0 lg:w-48 bg-gray-700 text-white shadow-lg rounded-lg">
-                  <li
-                    className="p-2 hover:bg-gray-600 cursor-pointer"
-                    onClick={() => {
-                      setDropdownOpen(false);
-                      router.push('/#subject-a');
-                    }}
-                  >
-                    Digital Designs (Adobe suite)
-                  </li>
-                  <li
-                    className="p-2 hover:bg-gray-600 cursor-pointer"
-                    onClick={() => {
-                      setDropdownOpen(false);
-                      router.push('/#subject-b');
-                    }}
-                  >
-                    Coded Digital Designs + Projects
-                  </li>
-                  <li
-                    className="p-2 hover:bg-gray-600 cursor-pointer"
-                    onClick={() => {
-                      setDropdownOpen(false);
-                      router.push('/#subject-c');
-                    }}
-                  >
-                    Other Projects
-                  </li>
-                </ul>
-              )}
+                Behance
+              </a>
             </li>
           </ul>
         </nav>

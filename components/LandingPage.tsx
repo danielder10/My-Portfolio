@@ -53,13 +53,17 @@ const LandingPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+    <div 
+    className="flex flex-col min-h-screen bg-cover bg-center transition-colors duration-500 opacity-85"
+    style={{ backgroundImage: "url('/landing.gif')" }}
+    >
       {/* Header */}
       <Header />
 
       {/* Main Content */}
       <main className="flex-grow flex flex-col items-center justify-center px-6">
-        <section className="w-full max-w-screen-lg py-12">
+      <section className="w-full max-w-screen-lg py-12">
+        <div className="bg-[#F5E6DA] bg-opacity-90 border border-[#C4A484] shadow-xl rounded-2xl p-8">
           <div className="flex flex-col items-center lg:items-start lg:flex-row lg:justify-between">
             <div className="flex flex-col w-full lg:w-1/2 space-y-6">
               <h1 className="text-4xl font-bold text-gray-900 dark:text-white text-center lg:text-left">
@@ -82,19 +86,23 @@ const LandingPage: React.FC = () => {
               />
             </div>
             <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
-              <div className="p-6 bg-white dark:bg-gray-800 rounded shadow-md">
-                <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+              <div className="p-6 bg-gradient-to-b from-[#E8D7C0] to-[#C4A484] border border-[#8B5E3C] shadow-lg rounded-xl">
+                <h2 className="text-2xl font-serif font-bold text-[#4D2D1A]">
                   Selected Category: {selectedCategory}
                 </h2>
-                <ul className="mt-4 list-disc list-inside text-gray-700 dark:text-gray-300">
+                <ul className="mt-4 space-y-2">
                   {categoryDescriptions[selectedCategory].map((item, index) => (
-                    <li key={index}>{item}</li>
+                    <li key={index} className="flex items-center gap-2 text-[#3A2C1A]">
+                      <span className="inline-block w-2.5 h-2.5 bg-[#8B5E3C] rounded-full opacity-70"></span>
+                      {item}
+                    </li>
                   ))}
                 </ul>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
       </main>
 
       {/* Footer */}
