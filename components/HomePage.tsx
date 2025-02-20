@@ -51,12 +51,15 @@ const HomePage = () => {
   ];
 
   return (
-    <div className="flex-grow flex flex-col min-h-screen bg-gray-50">
+    <div 
+    className="flex flex-col min-h-screen bg-cover bg-center transition-colors duration-500 opacity-85"
+    style={{ backgroundImage: "url('/homebg.avif')" }}
+    >
       <Header />
       <main className="flex-grow flex flex-col items-center justify-center px-4 mb-10">
         <section className="text-center py-10">
-          <h1 className="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
-          <p className="text-lg text-gray-600 mb-6">
+          <h1 className="text-6xl font-bold text-button mb-4">Welcome to My Portfolio</h1>
+          <p className="text-lg text-coffee mb-6">
             Showcasing my projects and skills.
           </p>
         </section>

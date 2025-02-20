@@ -25,7 +25,7 @@ const AboutPage = () => {
           {/* Profile Picture */}
           <div className="flex justify-center">
             <Image
-              src="/egg.png"
+              src="/daniel.png"
               alt="Profile Picture"
               width={250}
               height={250}
@@ -47,20 +47,20 @@ const AboutPage = () => {
           <div className="mt-6">
             <h2 className="text-2xl font-semibold text-gray-800">Skills</h2>
             <ul className="mt-2 grid grid-cols-2 gap-2 text-gray-700">
-              <li className="bg-button p-2 rounded-lg text-coffee">Next.js</li>
-              <li className="bg-button p-2 rounded-lg text-coffee">TypeScript</li>
-              <li className="bg-button p-2 rounded-lg text-coffee">Tailwind CSS</li>
-              <li className="bg-button p-2 rounded-lg text-coffee">Html + Html5</li>
-              <li className="bg-button p-2 rounded-lg text-coffee">JavaScript</li>
-              <li className="bg-button p-2 rounded-lg text-coffee">CSS</li>
-              <li className="bg-button p-2 rounded-lg text-coffee">React</li>
-              <li className="bg-button p-2 rounded-lg text-coffee">UI/UX Design</li>
-              <li className="bg-button p-2 rounded-lg text-coffee">Figma</li>
-              <li className="bg-button p-2 rounded-lg text-coffee">Adobe AfterEffects</li>
-              <li className="bg-button p-2 rounded-lg text-coffee">Adobe Illustrator</li>
-              <li className="bg-button p-2 rounded-lg text-coffee">Adobe Photoshop</li>
-              <li className="bg-button p-2 rounded-lg text-coffee">Adobe Premiere Pro</li>
-              <li className="bg-button p-2 rounded-lg text-coffee">Godot</li>
+              <li className="bg-button p-2 rounded-lg text-white">Next.js</li>
+              <li className="bg-button p-2 rounded-lg text-white">TypeScript</li>
+              <li className="bg-button p-2 rounded-lg text-white">Tailwind CSS</li>
+              <li className="bg-button p-2 rounded-lg text-white">Html + Html5</li>
+              <li className="bg-button p-2 rounded-lg text-white">JavaScript</li>
+              <li className="bg-button p-2 rounded-lg text-white">CSS</li>
+              <li className="bg-button p-2 rounded-lg text-white">React</li>
+              <li className="bg-button p-2 rounded-lg text-white">UI/UX Design</li>
+              <li className="bg-button p-2 rounded-lg text-white">Figma</li>
+              <li className="bg-button p-2 rounded-lg text-white">Adobe AfterEffects</li>
+              <li className="bg-button p-2 rounded-lg text-white">Adobe Illustrator</li>
+              <li className="bg-button p-2 rounded-lg text-white">Adobe Photoshop</li>
+              <li className="bg-button p-2 rounded-lg text-white">Adobe Premiere Pro</li>
+              <li className="bg-button p-2 rounded-lg text-white">Godot</li>
             </ul>
           </div>
 
@@ -85,7 +85,7 @@ const AboutPage = () => {
               ></textarea>
               <button
                 type="submit"
-                className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+                className="mt-4 bg-button text-white py-2 px-4 rounded hover:bg-blue-600"
               >
                 Send Message
               </button>

@@ -181,7 +181,7 @@ const ReachOut = () => {
               Explore the structured journey users take through ReachOut, from onboarding to job application, with an interactive user flow diagram.
             </p>
 
-            {/* Figma Embed */}
+            {/* Userflow */}
             <div className="relative w-full max-w-3xl mx-auto">
             <Image
                 src={"/reachout-userflow.png"}
@@ -253,8 +253,8 @@ const ReachOut = () => {
           </div>
         </section>
 
-{/* New Section - PDF Display */}
-<section className="px-4 py-12">
+      {/* New Section - PDF Display */}
+        <section className="px-4 py-12">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-5xl font-bold mb-4">User Research Findings</h2>
             <p className="text-lg text-gray-700 mb-6">
@@ -509,6 +509,38 @@ const ReachOut = () => {
                     </div>
                 </li>
             </ul>
+        </section>
+        {/* BCard - PDF Display */}
+        <section className="px-4 py-12">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-5xl font-bold mb-4">Business Cards</h2>
+            {/* Embedded PDF Viewer */}
+            <div className="relative w-full h-[600px] border overflow-hidden">
+            <embed
+              src="/ReachOut-BusinessCards.pdf"
+              type="application/pdf"
+              width="100%"
+              height="600px"
+              className="rounded-lg border-none"
+            />
+            </div>
+          </div>
+        </section>
+         {/* BCard - PDF Display */}
+         <section className="px-4 py-12">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-5xl font-bold mb-4">Brochure</h2>
+            {/* Embedded PDF Viewer */}
+            <div className="relative w-full h-[600px] border overflow-hidden">
+            <embed
+              src="/ReachOut-Brochure.pdf"
+              type="application/pdf"
+              width="100%"
+              height="600px"
+              className="rounded-lg border-none"
+            />
+            </div>
+          </div>
         </section>
       </main>
 
