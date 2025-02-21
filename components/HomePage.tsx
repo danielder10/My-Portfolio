@@ -31,12 +31,6 @@ const HomePage = () => {
       link: "/reachout", 
     },
     {
-      name: "VT Japan Fest",
-      description: " Currently WIP {An Interactive Travel Guide For People Wanting To Explore Japan} ",
-      image: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
-      link: "/home", 
-    },
-    {
       name: "Mechanical Object",
       description: "Find On Behance As Well!",
       image: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
@@ -52,14 +46,20 @@ const HomePage = () => {
 
   return (
     <div 
-    className="flex flex-col min-h-screen bg-cover bg-center transition-colors duration-500 opacity-85"
-    style={{ backgroundImage: "url('/homebg.avif')" }}
+      className="flex flex-col min-h-screen bg-cover bg-center transition-opacity duration-500"
+      style={{ 
+        backgroundImage: "url('/homebg.avif')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
+
       <Header />
       <main className="flex-grow flex flex-col items-center justify-center px-4 mb-10">
-        <section className="text-center py-10">
-          <h1 className="text-6xl font-bold text-button mb-4">Welcome to My Portfolio</h1>
-          <p className="text-lg text-coffee mb-6">
+        <section className="text-center py-10 ">
+          <h1 className="text-6xl font-bold text-button mb-4 drop-shadow-lg">Welcome to My Portfolio</h1>
+          <p className="text-lg text-coffee mb-6 drop-shadow-md">
             Showcasing my projects and skills.
           </p>
         </section>

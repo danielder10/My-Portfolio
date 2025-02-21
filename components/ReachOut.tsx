@@ -93,11 +93,10 @@ const ReachOut = () => {
       <main className="flex-grow flex flex-col justify-center items-center bg-white px-4">
         <div className="text-center"/>
           {/* Centered and Resized Image */}
-          <img
-            src="/Mockup.png"
-            alt="ReachOut Mockup"
-            className="mx-auto w-3/4 md:w-2/3 lg:w-1/2 h-auto mb-6"
-          />
+          <video className="mx-auto w-3/4 md:w-2/3 lg:w-1/2 h-auto mb-6" controls>
+          <source src="/ReachOut_Final.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+          </video>
 
           {/* Description Section */}
           <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12">
@@ -164,6 +163,14 @@ const ReachOut = () => {
                 type="primary"
                 className="w-auto text-center items-center justify-center"
               />
+              <br/>
+              <br/>
+              <Button
+                text="View Our Blog"
+                onClick={() => window.open("https://reach-out-blog.vercel.app", "_blank")}
+                type="primary"
+                className="w-auto text-center items-center justify-center"
+              />
             </div>
           </div>
         {/* Problem Statement Section */}
@@ -199,7 +206,7 @@ const ReachOut = () => {
                 href="https://www.figma.com/board/QQ7OsXhkE0rXtvPwP21aOx/User-Flow---ReachOut?node-id=0-1&t=kvoQ6dR9m7Omfgg7-1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-blue-600 text-white text-lg font-semibold rounded-lg hover:bg-blue-700"
+                className="px-6 py-3 bg-button text-white text-lg font-semibold rounded-lg hover:bg-button2"
               >
                 Open in Figma
               </a>

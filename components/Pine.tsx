@@ -12,6 +12,19 @@ import designThree from "../public/pine-card.png";
 import designFour from "../public/pine-nav.png";
 import designFive from "../public/pine-button.png";
 import logo from "../public/pine-logo.png"; 
+import screenOne from "../public/pine-landing.png";
+import screenTwo from "../public/pine-tutorial.png";
+import screenThree from "../public/pine-quiz.png";
+import screenFour from "../public/pine-faq.png";
+import screenFive from "../public/pine-home.png";
+import screenSix from "../public/pine-category.png";
+import screenSeven from "../public/pine-ingredients.png";
+import screenEight from "../public/pine-nutrition.png";
+import screenNine from "../public/pine-recipe.png";
+import screenTen from "../public/pine-list.png";
+import screenEleven from "../public/pine-location.png";
+import screenTwelve from "../public/pine-fav.png";
+import screenThirteen from "../public/pine-search.png";
 
 const Pine = () => {
   const router = useRouter();
@@ -83,6 +96,86 @@ const Pine = () => {
         "Buttons indicating user interactivity capabilities, alongside progress bars or job-matching visuals in action are clearly visible.",
     },
   ];
+  const screenImages = [
+    {
+      src: screenOne,
+      alt: "success story 1",
+      id: 1,
+      type: "Landing Page",
+    },
+    {
+      src: screenTwo,
+      alt: "success story 1",
+      id: 2,
+      type: "Tutorial Page",
+    },
+    {
+      src: screenThree,
+      alt: "success story 1",
+      id: 3,
+      type: "Quiz Page",
+    },
+    {
+      src: screenFour,
+      alt: "success story 1",
+      id: 4,
+      type: "FAQ Page",
+    },
+    {
+      src: screenFive,
+      alt: "Home Page",
+      id: 5,
+      type: "Contact Screen",
+    },
+    {
+      src: screenSix,
+      alt: "success story 1",
+      id: 6,
+      type: "Category Page",
+    },
+    {
+      src: screenSeven,
+      alt: "success story 1",
+      id: 1,
+      type: "Ingredients Page",
+    },
+    {
+      src: screenEight,
+      alt: "success story 1",
+      id: 1,
+      type: "Nutrition Screen",
+    },
+    {
+      src: screenNine,
+      alt: "success story 1",
+      id: 1,
+      type: "Recipe Page",
+    },
+    {
+      src: screenTen,
+      alt: "success story 1",
+      id: 1,
+      type: "Shopping List Page",
+    },
+    {
+      src: screenEleven,
+      alt: "success story 1",
+      id: 1,
+      type: "Restaurant Location Page",
+    },
+    {
+      src: screenTwelve,
+      alt: "success story 1",
+      id: 1,
+      type: "Favorites Page",
+    },
+    {
+      src: screenThirteen,
+      alt: "success story 1",
+      id: 1,
+      type: "Search Page",
+    },
+  ]
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -96,8 +189,9 @@ const Pine = () => {
           <img
             src="/pine-mockup.png"
             alt="Pine Mockup"
-            className="mx-auto w-3/4 md:w-2/3 lg:w-1/2 h-auto mb-6"
+            className="mx-auto w-full sm:w-5/6 md:w-3/4 lg:w-2/3 xl:w-1/2 h-auto max-w-[500px] mb-6"
           />
+
 
           {/* Description Section */}
           <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12">
@@ -237,39 +331,51 @@ const Pine = () => {
             </button>
         </div>
         </div>
-              {/* New Section - PDF Display */}
+ {/* Our Screens Section */}
       <section className="px-4 py-12">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl font-bold mb-4">Figma Prototype</h2>
+            <h2 className="text-5xl font-bold mb-4">Our Screens</h2>
             <p className="text-lg text-gray-700 mb-6">
-              Explore our Prototype Built On Figma.
+              View Our Designs
             </p>
             
-            {/* Embedded PDF Viewer */}
-            <div className="relative w-full h-[600px] border overflow-hidden">
-              <iframe
-                src="https://www.figma.com/proto/uAm1ofX4ebDsHBJSgyXpCz/MDIA-2106-%E2%80%93-Pine-SET-G?node-id=5-7&p=f&t=AGC9Jq13VpzGqHP0-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A7"
-                width="100%"
-                height="100%"
-                className="rounded-lg"
-              />
-            </div>
-            <br></br>
-            <a
-              href="https://www.figma.com/proto/uAm1ofX4ebDsHBJSgyXpCz/MDIA-2106-%E2%80%93-Pine-SET-G?node-id=5-7&p=f&t=AGC9Jq13VpzGqHP0-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-blue-600 text-white text-lg font-semibold rounded-lg hover:bg-blue-700"
-            >
-              Open in Figma
-            </a>
           </div>
+         {/* Animated Vertical Scrolling Display */}
+         <div className="relative w-[500px] h-[800px] overflow-hidden rounded-lg p-4 items-center justify-center">
+          <div className="absolute flex flex-col items-center gap-8 animate-scroll">
+            {screenImages.map((image, index) => (
+              <div key={index} className="flex flex-col items-center">
+                <div className="relative w-[450px] h-[940px]">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    className="object-cover w-full h-full rounded-lg shadow-md"
+                  />
+                </div>
+                <p className="text-gray-700 text-center mt-2">{image.type}</p>
+              </div>
+            ))}
+          </div>
+        </div>
         </section>
-        
       </main>
 
       {/* Footer */}
       <Footer />
+      <style jsx>{`
+        .animate-scroll {
+          animation: scroll 60s linear infinite;
+        }
+
+        @keyframes scroll {
+          0% {
+            transform: translateY(0);
+          }
+          100% {
+            transform: translateY(-100%);
+          }
+        }
+      `}</style>
     </div>
   );
 };
