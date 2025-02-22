@@ -33,7 +33,7 @@ const HomePage = () => {
     {
       name: "Mechanical Object",
       description: "Find On Behance As Well!",
-      image: "/Camera.png",
+      image: "/camera.png",
       link: "https://www.behance.net/daniel_der", 
     },
     {
@@ -75,6 +75,7 @@ const HomePage = () => {
               description={project.description}
               image={project.image}
               link={project.link}
+              
             />
           ))}
         </section>
