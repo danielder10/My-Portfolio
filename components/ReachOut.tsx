@@ -94,7 +94,7 @@ const ReachOut = () => {
         <div className="text-center"/>
           {/* Centered and Resized Image */}
           <video className="mx-auto w-3/4 md:w-2/3 lg:w-1/2 h-auto mb-6" controls>
-          <source src="/ReachOut_Final.mp4" type="video/mp4" />
+          <source src="/Promo2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
           </video>
 
