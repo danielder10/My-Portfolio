@@ -25,7 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ name, description, image, lin
       {isExternalLink ? (
         // External link that opens in a new tab
         <a href={link} target="_blank" rel="noopener noreferrer" className="block">
-          <div className="flex flex-col bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow duration-200">
+          <div className="flex flex-col bg-coffee rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow duration-200">
             <img
               src={image}
               alt={name}
@@ -44,7 +44,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ name, description, image, lin
       ) : (
         // Internal link that works with Next.js routing
         <Link href={link} className="block">
-          <div className="flex flex-col bg-white rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow duration-200">
+          <div className="flex flex-col bg-coffee rounded-lg shadow-md p-4 text-center hover:shadow-lg transition-shadow duration-200">
             <img
               src={image}
               alt={name}

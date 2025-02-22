@@ -178,23 +178,31 @@ const Pine = () => {
   ]
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div 
+      className="flex flex-col min-h-screen bg-cover bg-center transition-opacity duration-500"
+      style={{ 
+        backgroundImage: "url('/pinebg.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* Header */}
       <Header />
 
       {/* Main Content */}
-      <main className="flex-grow flex flex-col justify-center items-center bg-white px-4">
+      <main className="flex-grow flex flex-col justify-center items-center px-4">
         <div className="text-center"/>
           {/* Centered and Resized Image */}
           <img
             src="/pine-mockup.png"
             alt="Pine Mockup"
-            className="mx-auto w-full sm:w-5/6 md:w-3/4 lg:w-2/3 xl:w-1/2 h-auto max-w-[500px] mb-6"
+            className="mx-auto w-full sm:w-5/6 md:w-3/4 lg:w-2/3 xl:w-1/2 h-auto max-w-[700px] mb-6"
           />
 
 
           {/* Description Section */}
-          <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12">
+          <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12 bg-coffee">
             <h1 className="text-5xl font-bold mb-4">Pine</h1>
             <p className="text-lg leading-relaxed">
               PINE is an innovative food app designed to simplify meal decisions by combining location-based restaurant suggestions and personalized recipe recommendations. By leveraging user preferences and available ingredients, PINE helps reduce food waste while providing convenient options for dining out or cooking at home. It merges the best of food delivery services and recipe finders into one seamless platform.
@@ -253,11 +261,11 @@ const Pine = () => {
           </div>
 
         {/* Interface + Design Choice Section */}
-        <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12">
+        <section className="text-left max-w-3xl mx-auto p-10  bg-coffee rounded-lg mb-12">
             <h1 className="text-5xl font-bold mb-4">Interface and Design</h1>
         </section>
         {/* Carousel Design */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6  bg-coffee  rounded-lg w-3/4">
         <div className="col-span-1 sm:col-span-2 lg:col-span-3 relative w-full max-w-6xl mx-auto py-16">
             <div className="relative flex items-center justify-center h-[500px]">
             {designCarouselImages.map((image, index) => {
@@ -321,18 +329,18 @@ const Pine = () => {
             onClick={handleDesignPrev}
             className="absolute top-1/2 left-16 sm:left-20 md:left-32 lg:left-96 transform -translate-y-1/2 bg-button rounded-full p-4 hover:bg-button2 z-30 opacity-80"
             >
-            &#8594;
+            &#8592;
             </button>
             <button
             onClick={handleDesignNext}
             className="absolute top-1/2 right-16 sm:right-20 md:right-32 lg:right-96 transform -translate-y-1/2 bg-button rounded-full p-4 hover:bg-button2 z-30 opacity-80"
             >
-            &#8592;
+            &#8594;
             </button>
         </div>
         </div>
  {/* Our Screens Section */}
-      <section className="px-4 py-12">
+      <section className="px-4 py-12 bg-coffee  rounded-lg mb-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-5xl font-bold mb-4">Our Screens</h2>
             <p className="text-lg text-gray-700 mb-6">
@@ -349,7 +357,7 @@ const Pine = () => {
                   <Image
                     src={image.src}
                     alt={image.alt}
-                    className="object-cover w-full h-full rounded-lg shadow-md"
+                    className="object-cover w-full h-full rounded-3xl shadow-md"
                   />
                 </div>
                 <p className="text-gray-700 text-center mt-2">{image.type}</p>
