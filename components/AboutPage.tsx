@@ -34,7 +34,7 @@ const AboutPage = () => {
           </div>
 
           {/* About Me Section */}
-          <h1 className="text-4xl font-bold mt-4">Daniel Robert Der</h1>
+          <h1 className="text-4xl text-gray-700 font-bold mt-4">Daniel Robert Der</h1>
           <p className="text-gray-600">Front-End Web Designer & Developer</p>
           <p className="mt-4 text-gray-700">
             Passionate about creating sleek and functional user experiences with
@@ -42,7 +42,18 @@ const AboutPage = () => {
             and accessible web applications using Next.js, TypeScript, and
             Tailwind CSS.
           </p>
-
+          {/* Resume Button */}
+          <div className="mt-4">
+            <a
+              href="/Daniel_Der_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-button text-white py-2 px-4 rounded hover:bg-button2"
+            >
+              View My Resume
+            </a>
+          </div>
+          
           {/* Skills Section */}
           <div className="mt-6">
             <h2 className="text-2xl font-semibold text-gray-800">Skills</h2>
