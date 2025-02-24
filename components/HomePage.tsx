@@ -39,7 +39,7 @@ const HomePage = () => {
     {
       name: "Soda Can Design",
       description: "Find On Behance As Well!",
-      image: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",
+      image: "/soda.png",
       link: "https://www.behance.net/daniel_der", 
     },
   ];
