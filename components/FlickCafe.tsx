@@ -163,7 +163,7 @@ const FlickCafe = () => {
           />
 
           {/* Description Section */}
-          <section className="text-left max-w-3xl mx-auto p-10 bg-coffee bg-opacity-50 rounded-lg mb-12">
+          <section className="text-left max-w-3xl mx-auto p-10 bg-coffee rounded-lg mb-12">
             <h1 className="text-5xl font-bold mb-4">Flick Cafe</h1>
             <p className="text-lg leading-relaxed">
             Flick Cafe is a coffee shop and cinema hybrid in Burnaby that combines 1920s art deco charm with a modern vibe. It offers freshly brewed coffee, classic movie snacks, and nightly film screenings, with weekend polls letting customers choose the movie. Perfect for movie lovers and coffee enthusiasts, Flick Cafe creates a unique and welcoming space for all ages to relax and enjoy.
@@ -211,7 +211,7 @@ const FlickCafe = () => {
           </div>
 
         {/* Interface + Design Choice Section */}
-        <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12">
+        <section className="text-left max-w-3xl mx-auto p-10 rounded-lg bg-coffee">
             <h1 className="text-5xl font-bold mb-4">Interface and Design</h1>
         </section>
         {/* Carousel Design */}
@@ -290,7 +290,7 @@ const FlickCafe = () => {
         </div>
         </div>
     {/* Our Screens Section */}
-      <section className="px-4 py-12 bg-coffee bg-opacity-55 rounded-lg mb-10">
+      <section className="px-4 py-12 bg-coffee rounded-lg mb-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-5xl font-bold mb-4">Our Screens</h2>
             <p className="text-lg text-gray-700 mb-6">

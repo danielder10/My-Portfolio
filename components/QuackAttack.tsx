@@ -180,12 +180,20 @@ const QuackAttack = () => {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div 
+      className="flex flex-col min-h-screen bg-cover bg-center transition-opacity duration-500"
+      style={{ 
+        backgroundImage: "url('/quackbg.jpeg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* Header */}
       <Header />
 
       {/* Main Content */}
-      <main className="flex-grow flex flex-col justify-center items-center bg-white px-4">
+      <main className="flex-grow flex flex-col justify-center items-center px-4">
         <div className="text-center"/>
           {/* Centered and Resized Image */}
           <video className="mx-auto w-3/4 md:w-2/3 lg:w-1/2 h-auto mb-6" controls>
@@ -195,7 +203,7 @@ const QuackAttack = () => {
             
 
           {/* Description Section */}
-          <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12">
+          <section className="text-left max-w-3xl mx-auto p-10 bg-coffee rounded-lg mb-12">
             <h1 className="text-5xl font-bold mb-4">Quack Attack</h1>
             <p className="text-lg leading-relaxed">
             Quack Attack is a thrilling metroidvania platformer where you play as a fearless duck on a mission to save the farm from starvation. Navigate a perilous world, battle relentless enemies, and face off against the cunning Chef Louis—the mastermind behind the crisis. With fast-paced combat, engaging dialogues, and an immersive world, Quack Attack challenges your skills and determination in an epic adventure where every quack counts!
@@ -254,7 +262,7 @@ const QuackAttack = () => {
           </div>
 
         {/* Characters Section */}
-        <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12">
+        <section className="text-left max-w-3xl mx-auto p-10 bg-coffee rounded-lg">
             <h1 className="text-5xl font-bold mb-4">Characters</h1>
         </section>
 
@@ -330,7 +338,7 @@ const QuackAttack = () => {
         </div>
 
         {/*Design Choice Section */}
-        <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12">
+        <section className="text-left max-w-3xl mx-auto p-10 rounded-lg bg-coffee">
             <h1 className="text-5xl font-bold mb-4">Landscape/Scene Designs</h1>
         </section>
 

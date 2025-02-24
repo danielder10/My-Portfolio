@@ -265,7 +265,7 @@ const Pine = () => {
             <h1 className="text-5xl font-bold mb-4">Interface and Design</h1>
         </section>
         {/* Carousel Design */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6  bg-coffee  rounded-lg w-3/4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6  rounded-lg w-3/4">
         <div className="col-span-1 sm:col-span-2 lg:col-span-3 relative w-full max-w-6xl mx-auto py-16">
             <div className="relative flex items-center justify-center h-[500px]">
             {designCarouselImages.map((image, index) => {

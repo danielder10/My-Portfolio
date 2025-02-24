@@ -85,12 +85,20 @@ const ReachOut = () => {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div 
+      className="flex flex-col min-h-screen bg-cover bg-center transition-opacity duration-500"
+      style={{ 
+        backgroundImage: "url('/reachoutbg.jpeg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* Header */}
       <Header />
 
       {/* Main Content */}
-      <main className="flex-grow flex flex-col justify-center items-center bg-white px-4">
+      <main className="flex-grow flex flex-col justify-center items-center px-4">
         <div className="text-center"/>
           {/* Centered and Resized Image */}
           <video className="mx-auto w-3/4 md:w-2/3 lg:w-1/2 h-auto mb-6" controls>
@@ -99,7 +107,7 @@ const ReachOut = () => {
           </video>
 
           {/* Description Section */}
-          <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12">
+          <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12 bg-coffee">
             <h1 className="text-5xl font-bold mb-4">Reach Out</h1>
             <p className="text-lg leading-relaxed">
               “ReachOut is a social impact employment app designed to support
@@ -174,7 +182,7 @@ const ReachOut = () => {
             </div>
           </div>
         {/* Problem Statement Section */}
-          <section className="text-center py-8 bg-white">
+          <section className="text-center py-8 mx-auto p-10 rounded-lg bg-coffee">
             <h2 className="text-5xl font-bold mb-4">Problem Statement</h2>
             <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto text-left">
             Individuals impacted by incarceration face significant challenges in reintegrating into society, including limited access to employment opportunities, social stigma, and a lack of resources tailored to their unique needs. These barriers not only hinder personal growth and financial stability but also contribute to higher rates of recidivism, perpetuating cycles of disadvantage. Employers, on the other hand, often struggle to find and connect with skilled individuals willing to contribute meaningfully, particularly within second-chance hiring initiatives. There is a critical need for a solution that bridges this gap, empowering individuals to rebuild their lives while enabling organizations to embrace more inclusive hiring practices.
@@ -182,7 +190,7 @@ const ReachOut = () => {
           </section>
           {/* User Flow Section */}
         <section className="px-4 py-12 ">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center bg-coffee p-10 rounded-lg">
             <h2 className="text-5xl font-bold mb-4">User Flow</h2>
             <p className="text-lg text-gray-700 mb-6">
               Explore the structured journey users take through ReachOut, from onboarding to job application, with an interactive user flow diagram.
@@ -215,9 +223,9 @@ const ReachOut = () => {
         </section>
 
 {/* Comp Analysis section */}
-<section className="px-4 py-12 bg-white">
+<section className="px-4 py-12 mx-auto bg-coffee p-10 rounded-lg">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-5xl font-bold mb-4">Competitor Analysis</h2>
+            <h2 className="text-5xl font-bold mb-4 text-center">Competitor Analysis</h2>
             <div className="flex flex-col lg:flex-row items-start gap-8">
               <div className="flex-1">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-4">Indeed</h3>
@@ -259,49 +267,54 @@ const ReachOut = () => {
             </div>
           </div>
         </section>
+        <br></br>
+        <div className="flex flex-wrap justify-center gap-10 px-4 py-12">
+  {/* User Research Findings */}
+  <section className="bg-coffee p-10 rounded-lg max-w-2xl">
+    <div className="text-center">
+      <h2 className="text-5xl font-bold mb-4">User Research Findings</h2>
+      <p className="text-lg text-gray-700 mb-6">
+        Explore our research insights on job-seeking challenges and solutions for ex-offenders.
+      </p>
 
-      {/* New Section - PDF Display */}
-        <section className="px-4 py-12">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl font-bold mb-4">User Research Findings</h2>
-            <p className="text-lg text-gray-700 mb-6">
-              Explore our research insights on job-seeking challenges and solutions for ex-offenders.
-            </p>
-            
-            {/* Embedded PDF Viewer */}
-            <div className="relative w-full h-[600px] border overflow-hidden">
-            <embed
-              src="/user_research.pdf"
-              type="application/pdf"
-              width="100%"
-              height="600px"
-              className="rounded-lg border-none"
-            />
-            </div>
-          </div>
-        </section>
-        {/* New Section - PDF Display */}
-        <section className="px-4 py-12">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl font-bold mb-4">User Personas</h2>
-            <p className="text-lg text-gray-700 mb-6">
-            Gain insights into our detailed user personas, representing the key stakeholders and their unique challenges, motivations, and behaviors in the job-seeking process.
-            </p>
-            
-            {/* Embedded PDF Viewer */}
-            <div className="relative w-full h-[600px] border overflow-hidden">
-              <embed
-                src="/user_persona.pdf"
-                width="100%"
-                height="100%"
-                className="rounded-lg"
-              />
-            </div>
-          </div>
-        </section>
+      {/* Embedded PDF Viewer */}
+      <div className="relative w-full h-[600px] border overflow-hidden">
+        <embed
+          src="/user_research.pdf"
+          type="application/pdf"
+          width="100%"
+          height="600px"
+          className="rounded-lg border-none"
+        />
+      </div>
+    </div>
+  </section>
 
+  {/* User Personas */}
+  <section className="bg-coffee p-10 rounded-lg max-w-2xl">
+    <div className="text-center">
+      <h2 className="text-5xl font-bold mb-4">User Personas</h2>
+      <p className="text-lg text-gray-700 mb-6">
+        Gain insights into our detailed user personas, representing the key stakeholders and their 
+        unique challenges, motivations, and behaviors in the job-seeking process.
+      </p>
+
+      {/* Embedded PDF Viewer */}
+      <div className="relative w-full h-[600px] border overflow-hidden">
+        <embed
+          src="/user_persona.pdf"
+          type="application/pdf"
+          width="100%"
+          height="600px"
+          className="rounded-lg border-none"
+        />
+      </div>
+    </div>
+  </section>
+</div>
+        <br></br>
         {/* Interface + Design Choice Section */}
-        <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12">
+        <section className="text-left max-w-3xl mx-auto bg-coffee p-10 rounded-lg mb-12">
             <h1 className="text-5xl font-bold mb-4">Interface and Design Choices</h1>
             <ul className="text-lg leading-relaxed space-y-4">
                 <li className="flex items-start">
@@ -350,7 +363,7 @@ const ReachOut = () => {
         </section>
 
        {/* Carousel Wrapper with relative positioning */}
-        <div className="relative w-full max-w-6xl mx-auto py-8 sm:py-12 lg:py-16">
+        <div className="relative w-full max-w-6xl mx-auto bg-coffee p-10 rounded-lg py-8 sm:py-12 lg:py-16">
           <div className="relative flex items-center justify-center w-full max-w-4xl h-[400px] sm:h-[500px] overflow-hidden">
             {designCarouselImages.map((image, index) => {
               const position =
@@ -421,8 +434,9 @@ const ReachOut = () => {
             &#8594;
           </button>
         </div>
+        <br></br>
         {/* Challenges Section */}
-        <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12">
+        <section className="text-left max-w-3xl mx-auto bg-coffee p-10 rounded-lg mb-12">
             <h1 className="text-5xl font-bold mb-4">Challenges</h1>
             <ul className="text-lg leading-relaxed space-y-4">
                 <li className="flex items-start">
@@ -469,8 +483,9 @@ const ReachOut = () => {
                 </li>
             </ul>
         </section>
+        <br></br>
       {/* Solutions Section */}
-      <section className="text-left max-w-3xl mx-auto p-10 rounded-lg mb-12">
+      <section className="text-left max-w-3xl mx-auto bg-coffee p-10 rounded-lg mb-12">
             <h1 className="text-5xl font-bold mb-4">Solutions</h1>
             <ul className="text-lg leading-relaxed space-y-4">
                 <li className="flex items-start">
@@ -517,38 +532,41 @@ const ReachOut = () => {
                 </li>
             </ul>
         </section>
-        {/* BCard - PDF Display */}
-        <section className="px-4 py-12">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl font-bold mb-4">Business Cards</h2>
-            {/* Embedded PDF Viewer */}
-            <div className="relative w-full h-[600px] border overflow-hidden">
-            <embed
-              src="/ReachOut-BusinessCards.pdf"
-              type="application/pdf"
-              width="100%"
-              height="600px"
-              className="rounded-lg border-none"
-            />
-            </div>
-          </div>
-        </section>
-         {/* BCard - PDF Display */}
-         <section className="px-4 py-12">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl font-bold mb-4">Brochure</h2>
-            {/* Embedded PDF Viewer */}
-            <div className="relative w-full h-[600px] border overflow-hidden">
-            <embed
-              src="/ReachOut-Brochure.pdf"
-              type="application/pdf"
-              width="100%"
-              height="600px"
-              className="rounded-lg border-none"
-            />
-            </div>
-          </div>
-        </section>
+        <div className="flex flex-wrap justify-center gap-10 px-4 py-12">
+  {/* BCard - PDF Display */}
+  <section className="bg-coffee p-10 rounded-lg max-w-2xl">
+    <div className="text-center">
+      <h2 className="text-5xl font-bold mb-4">Business Cards</h2>
+      {/* Embedded PDF Viewer */}
+      <div className="relative w-full h-[600px] border overflow-hidden">
+        <embed
+          src="/ReachOut-BusinessCards.pdf"
+          type="application/pdf"
+          width="100%"
+          height="600px"
+          className="rounded-lg border-none"
+        />
+      </div>
+    </div>
+  </section>
+
+  {/* Brochure - PDF Display */}
+  <section className="bg-coffee p-10 rounded-lg max-w-2xl">
+    <div className="text-center">
+      <h2 className="text-5xl font-bold mb-4">Brochure</h2>
+      {/* Embedded PDF Viewer */}
+      <div className="relative w-full h-[600px] border overflow-hidden">
+        <embed
+          src="/ReachOut-Brochure.pdf"
+          type="application/pdf"
+          width="100%"
+          height="600px"
+          className="rounded-lg border-none"
+        />
+      </div>
+    </div>
+  </section>
+</div>
       </main>
 
       {/* Footer */}

@@ -15,7 +15,15 @@ const AboutPage = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div 
+      className="flex flex-col min-h-screen bg-cover bg-center transition-opacity duration-500"
+      style={{ 
+        backgroundImage: "url('/aboutbg.jpeg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* Header */}
       <Header />
 
