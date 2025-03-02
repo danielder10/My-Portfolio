@@ -2,6 +2,7 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ImageComparison from "@/components/ImageComparison"
 import Button from "./Button";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -361,7 +362,10 @@ const ReachOut = () => {
                 </li>
             </ul>
         </section>
-
+        <section className="text-left max-w-6xl mx-auto bg-coffee p-10 rounded-lg mb-12">
+        <ImageComparison/>
+        </section>
+        <br></br>
        {/* Carousel Wrapper with relative positioning */}
         <div className="relative w-full max-w-6xl mx-auto bg-coffee p-10 rounded-lg py-8 sm:py-12 lg:py-16">
           <div className="relative flex items-center justify-center w-full max-w-4xl h-[400px] sm:h-[500px] overflow-hidden">

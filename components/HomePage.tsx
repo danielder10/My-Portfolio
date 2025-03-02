@@ -31,15 +31,15 @@ const HomePage = () => {
       link: "/reachout", 
     },
     {
-      name: "Mechanical Object",
-      description: "Find On Behance As Well!",
-      image: "/camera.png",
-      link: "https://www.behance.net/daniel_der", 
-    },
-    {
       name: "Soda Can Design",
       description: "Find On Behance As Well!",
       image: "/soda.png",
+      link: "/soda", 
+    },
+    {
+      name: "Mechanical Object",
+      description: "Find On Behance As Well!",
+      image: "/camera.png",
       link: "https://www.behance.net/daniel_der", 
     },
   ];

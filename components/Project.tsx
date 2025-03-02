@@ -14,7 +14,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ name, description, image, lin
   const [isHovered, setIsHovered] = useState(false);
 
   // Check if the project should open in a new tab
-  const isExternalLink = name === "Mechanical Object" || name === "Soda Can Design";
+  const isExternalLink = name === "Mechanical Object";
 
   return (
     <div 
