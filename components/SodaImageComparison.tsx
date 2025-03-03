@@ -64,16 +64,18 @@ const SodaImageComparison = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <h1 className="text-2xl font-bold mb-4">Check Out The Flavors!</h1>
-      <p className="mb-4">Click and slide the blue sliders to view our flavors:</p>
+      <h1 className="text-2xl font-bold mb-4">Compare Three Images</h1>
+      <p className="mb-4">Click and slide the blue sliders to compare three images:</p>
       <div ref={containerRef} className="relative w-[600px] h-[800px]">
         <div className="absolute inset-0">
-          <Image src="/bg1.png" alt="Snow" layout="fill" objectFit="cover" />
+          <Image src="/img_snow.jpg" alt="Snow" layout="fill" objectFit="cover" />
         </div>
-        {["/bg2.png", "/bg3.png"].map((src, index) => (
+        {["/img_forest.jpg", "/img_girl.jpg"].map((src, index) => (
           <div
             key={index}
-            ref={(el) => (overlayRefs.current[index] = el!)}
+            ref={(el) => {
+              if (el) overlayRefs.current[index] = el;
+            }}
             className="absolute inset-0 w-1/2 overflow-hidden"
           >
             <Image src={src} alt={`Comparison ${index + 1}`} layout="fill" objectFit="cover" />
@@ -82,7 +84,9 @@ const SodaImageComparison = () => {
         {[0, 1].map((index) => (
           <div
             key={index}
-            ref={(el) => (sliderRefs.current[index] = el!)}
+            ref={(el) => {
+              if (el) sliderRefs.current[index] = el;
+            }}
             className="absolute top-1/2 -translate-y-1/2 w-10 h-10 bg-blue-500 opacity-70 rounded-full cursor-ew-resize z-10"
             style={{ left: `${(index + 1) * 33}%` }}
           ></div>
