@@ -68,9 +68,9 @@ const SodaImageComparison = () => {
       <p className="mb-4">Click and slide the blue sliders to compare three images:</p>
       <div ref={containerRef} className="relative w-[600px] h-[800px]">
         <div className="absolute inset-0">
-          <Image src="/img_snow.jpg" alt="Snow" layout="fill" objectFit="cover" />
+          <Image src="/Vanillite.png" alt="Snow" layout="fill" objectFit="cover" />
         </div>
-        {["/img_forest.jpg", "/img_girl.jpg"].map((src, index) => (
+        {["/Chocollite.png", "/Orannite.png"].map((src, index) => (
           <div
             key={index}
             ref={(el) => {
