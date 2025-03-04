@@ -64,7 +64,7 @@ const SodaImageComparison = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <h1 className="text-2xl font-bold mb-4">Compare Three Images</h1>
+      <h1 className="text-2xl font-bold mb-4">View The Flavors and their designs!</h1>
       <p className="mb-4">Click and slide the blue sliders to compare three images:</p>
       <div ref={containerRef} className="relative w-[600px] h-[800px]">
         <div className="absolute inset-0">

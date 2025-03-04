@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Image from 'next/image';
 
 const ImageComparison = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -19,22 +18,20 @@ const ImageComparison = () => {
     const updateSliderPosition = (e: MouseEvent | TouchEvent) => {
       if (!isDraggingRef.current) return;
 
-      const containerWidth = container.offsetWidth;
-      let pos = getCursorPos(e);
-      
-      // Ensure the slider stays within bounds
+      const containerRect = container.getBoundingClientRect();
+      let pos = getCursorPos(e, containerRect);
+
       if (pos < 0) pos = 0;
-      if (pos > containerWidth) pos = containerWidth;
+      if (pos > containerRect.width) pos = containerRect.width;
 
       overlay.style.width = `${pos}px`;
       slider.style.left = `${pos - slider.offsetWidth / 2}px`;
     };
 
-    const getCursorPos = (e: MouseEvent | TouchEvent) => {
+    const getCursorPos = (e: MouseEvent | TouchEvent, containerRect: DOMRect) => {
       let x = 0;
-      let rect = container.getBoundingClientRect();
       let event = 'touches' in e ? e.touches[0] : e;
-      x = event.pageX - rect.left;
+      x = event.clientX - containerRect.left;
       return x;
     };
 
@@ -67,17 +64,34 @@ const ImageComparison = () => {
   return (
     <div className="flex flex-col items-center">
       <h1 className="text-4xl font-bold mb-4">Check Out Our Two Design Draft Wireframes!</h1>
-      <p className="mb-4 text-2xl">Click and slide the blue slider to View the <b>Organization Flow</b> and <b>Employer Flow:</b></p>
-      <div ref={containerRef} className="relative w-[800px] h-[900px]">
+      <p className="mb-4 text-2xl">
+        Click and drag the blue slider to compare the <b>Organization Flow</b> and <b>Employer Flow:</b>
+      </p>
+
+      <div ref={containerRef} className="relative w-[800px] h-[900px] border border-gray-300 shadow-lg overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/Mockup.png" alt="Snow" layout="fill" objectFit="cover" />
+          <object
+            data="/ReachOut-Employer.pdf"
+            type="application/pdf"
+            className="w-full h-full"
+          >
+            <p>Your browser does not support PDFs. <a href="/ReachOut-Employer.pdf">Download Employer Flow</a></p>
+          </object>
         </div>
+
         <div ref={overlayRef} className="absolute inset-0 w-1/2 overflow-hidden">
-          <Image src="/Mockup2.png" alt="Forest" layout="fill" objectFit="cover" />
+          <object
+            data="/ReachOut-Organization.pdf"
+            type="application/pdf"
+            className="w-full h-full"
+          >
+            <p>Your browser does not support PDFs. <a href="/ReachOut-Organization.pdf">Download Organization Flow</a></p>
+          </object>
         </div>
+
         <div
           ref={sliderRef}
-          className="absolute top-1/2 -translate-y-1/2 w-10 h-10 bg-blue-500 opacity-70 rounded-full cursor-ew-resize z-10"
+          className="absolute top-0 bottom-0 w-2 bg-blue-500 opacity-80 cursor-ew-resize z-10"
           style={{ left: '50%' }}
         ></div>
       </div>
