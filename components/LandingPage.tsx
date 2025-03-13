@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Button from "@/components/Button";
 import CategorySelector from "@/components/Category";
 import Typing from "@/components/Typing";
+import SwiperComponent from "@/components/Swiper";
 
 const LandingPage: React.FC = () => {
   const router = useRouter();
@@ -103,6 +104,8 @@ const LandingPage: React.FC = () => {
           </div>
         </div>
       </section>
+      {/* Swiper Component */}
+      <SwiperComponent selectedCategory={selectedCategory} />
       </main>
 
       {/* Footer */}
