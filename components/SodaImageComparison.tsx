@@ -87,7 +87,7 @@ const SodaImageComparison = () => {
             ref={(el) => {
               if (el) sliderRefs.current[index] = el;
             }}
-            className="absolute top-1/2 -translate-y-1/2 w-10 h-10 bg-blue-500 opacity-70 rounded-full cursor-ew-resize z-10"
+            className="absolute top-1/2 -translate-y-1/2 w-10 h-10 bg-blue-200 opacity-70 rounded-full cursor-ew-resize z-10"
             style={{ left: `${(index + 1) * 33}%` }}
           ></div>
         ))}

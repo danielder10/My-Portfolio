@@ -92,12 +92,12 @@ const SwiperComponent: React.FC<SwiperComponentProps> = ({ selectedCategory }) =
         className="swiper-container"
       >
         {filteredProjects.map((project, index) => (
-          <SwiperSlide key={index} className="bg-gray-800 p-4 rounded-lg">
-            <div className="cardPopout bg-black bg-opacity-70 p-5 rounded-md flex flex-col">
+          <SwiperSlide key={index} className="bg-button p-4 rounded-lg md:w-[400px] lg:w-[450px] xl:w-[500px]">
+            <div className="cardPopout bg-coffee bg-opacity-70 p-5 rounded-md flex flex-col">
               <img src={project.image} alt={project.name} className="w-full rounded mb-4" />
               <h2 className="text-2xl font-bold mb-2">{project.name}</h2>
-              <p className="text-gray-400">{project.description}</p>
-              <a href={project.link} className="mt-4 flex items-center justify-between bg-black text-white p-2 rounded transition hover:bg-blue-600">
+              <p className="text-white">{project.description}</p>
+              <a href={project.link} className="mt-4 flex items-center justify-between bg-button text-white p-2 rounded transition hover:bg-button2">
                 View Project
               </a>
             </div>

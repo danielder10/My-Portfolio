@@ -181,9 +181,9 @@ const QuackAttack = () => {
 
   return (
     <div 
-      className="flex flex-col min-h-screen bg-cover bg-center transition-opacity duration-500"
+      className="relative flex flex-col min-h-screen bg-cover bg-center transition-opacity duration-500"
       style={{ 
-        backgroundImage: "url('/quackbg.jpeg')",
+        backgroundImage: "url('/quackbg.avif')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
