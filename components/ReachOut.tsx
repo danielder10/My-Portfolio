@@ -367,77 +367,82 @@ const ReachOut = () => {
         </section>
         <br></br>
        {/* Carousel Wrapper with relative positioning */}
-        <div className="relative w-full max-w-6xl mx-auto bg-coffee p-10 rounded-lg py-8 sm:py-12 lg:py-16">
-          <div className="relative flex items-center justify-center w-full max-w-4xl h-[400px] sm:h-[500px] overflow-hidden">
-            {designCarouselImages.map((image, index) => {
-              const position =
-                (index - designCurrentIndex + designCarouselImages.length) %
-                designCarouselImages.length;
+       <div className="relative w-full max-w-6xl mx-auto bg-coffee p-10 rounded-lg py-8 sm:py-12 lg:py-16 flex justify-center">
+        <div className="relative flex items-center justify-center w-full h-[400px] sm:h-[500px] overflow-hidden">
+          {designCarouselImages.map((image, index) => {
+            const position =
+              (index - designCurrentIndex + designCarouselImages.length) %
+              designCarouselImages.length;
 
-              let transform = "";
-              let blur = "";
-              let opacity = "";
-              let zIndex = 0;
+            let transform = "";
+            let blur = "";
+            let opacity = "";
+            let zIndex = 0;
 
-              if (position === 0) {
-                transform = "translate-x-0 scale-100";
-                blur = "blur-none";
-                opacity = "opacity-100";
-                zIndex = 20;
-              } else if (position === 1 || position === designCarouselImages.length - 1) {
-                transform = position === 1 ? "translate-x-24 sm:translate-x-36 scale-90" : "-translate-x-24 sm:-translate-x-36 scale-90";
-                blur = "blur-md";
-                opacity = "opacity-80";
-                zIndex = 10;
-              } else {
-                transform = "translate-x-0 scale-80";
-                blur = "blur-lg";
-                opacity = "opacity-0";
-                zIndex = 0;
-              }
+            if (position === 0) {
+              transform = "translate-x-0 scale-100";
+              blur = "blur-none";
+              opacity = "opacity-100";
+              zIndex = 20;
+            } else if (position === 1 || position === designCarouselImages.length - 1) {
+              const offset = position === 1 ? "translate-x-[20%]" : "-translate-x-[20%]";
+              transform = `${offset} scale-90`;
+              blur = "blur-md";
+              opacity = "opacity-80";
+              zIndex = 10;
+            } else {
+              transform = "translate-x-0 scale-80";
+              blur = "blur-lg";
+              opacity = "opacity-0 pointer-events-none"; // Hide off-screen items
+              zIndex = 0;
+            }
 
-              return (
-                <div
-                  key={image.id}
-                  className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ease-in-out ${transform} ${blur} ${opacity}`}
-                  style={{ zIndex }}
-                >
-                  <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 w-[300px] sm:w-[384px] h-[400px] sm:h-[480px] flex flex-col items-center text-center">
-                    <div className="w-[250px] sm:w-[300px] h-[160px] sm:h-[200px] mb-4 sm:mb-6">
-                      <Image
-                        src={image.src}
-                        alt={image.alt}
-                        className="w-full h-full object-cover mt-6 sm:mt-14"
-                      />
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-semibold mt-6 sm:mt-14">{image.issue}</h3>
-                    <p className="text-sm sm:text-base text-gray-500 mb-2 sm:mb-4">{image.type}</p>
+            return (
+              <div
+                key={image.id}
+                className={`absolute top-1/2 -translate-y-1/2 transition-all duration-500 ease-in-out ${transform} ${blur} ${opacity}`}
+                style={{ zIndex }}
+              >
+                <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 w-[300px] sm:w-[384px] h-[400px] sm:h-[480px] flex flex-col items-center text-center">
+                  <div className="w-[250px] sm:w-[300px] h-[160px] sm:h-[200px] mb-4 sm:mb-6">
                     <Image
-                      src={logo}
-                      alt="reachout logo"
-                      className="w-10 sm:w-12 h-10 sm:h-12 mt-4 sm:mt-6 p-2 bg-ylnMnBlue bg-opacity-10 rounded-full"
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-full object-cover mt-6 sm:mt-14"
                     />
                   </div>
+                  <h3 className="text-xl sm:text-2xl font-semibold mt-6 sm:mt-14">
+                    {image.issue}
+                  </h3>
+                  <p className="text-sm sm:text-base text-gray-500 mb-2 sm:mb-4">
+                    {image.type}
+                  </p>
+                  <Image
+                    src={logo}
+                    alt="reachout logo"
+                    className="w-10 sm:w-12 h-10 sm:h-12 mt-4 sm:mt-6 p-2 bg-ylnMnBlue bg-opacity-10 rounded-full"
+                  />
                 </div>
-              );
-            })}
-          </div>
-
-          {/* Nav buttons - Now correctly positioned next to the carousel */}
-          <button
-            onClick={handleDesignPrev}
-            className="absolute left-4 sm:left-8 md:left-12 lg:left-20 xl:left-24 top-1/2 transform -translate-y-1/2 bg-button rounded-full p-3 sm:p-4 hover:bg-button2 z-30 opacity-80"
-          >
-            &#8592;
-          </button>
-
-          <button
-            onClick={handleDesignNext}
-            className="absolute right-4 sm:right-8 md:right-12 lg:right-20 xl:right-24 top-1/2 transform -translate-y-1/2 bg-button rounded-full p-3 sm:p-4 hover:bg-button2 z-30 opacity-80"
-          >
-            &#8594;
-          </button>
+              </div>
+            );
+          })}
         </div>
+
+        {/* Navigation Buttons */}
+        <button
+          onClick={handleDesignPrev}
+          className="absolute left-4 sm:left-8 md:left-12 lg:left-20 xl:left-24 top-1/2 -translate-y-1/2 bg-button rounded-full p-3 sm:p-4 hover:bg-button2 z-30 opacity-80"
+        >
+          &#8592;
+        </button>
+
+        <button
+          onClick={handleDesignNext}
+          className="absolute right-4 sm:right-8 md:right-12 lg:right-20 xl:right-24 top-1/2 -translate-y-1/2 bg-button rounded-full p-3 sm:p-4 hover:bg-button2 z-30 opacity-80"
+        >
+          &#8594;
+        </button>
+      </div>
         <br></br>
         {/* Challenges Section */}
         <section className="text-left max-w-3xl mx-auto bg-coffee p-10 rounded-lg mb-12">
@@ -537,40 +542,40 @@ const ReachOut = () => {
             </ul>
         </section>
         <div className="flex flex-wrap justify-center gap-10 px-4 py-12">
-  {/* BCard - PDF Display */}
-  <section className="bg-coffee p-10 rounded-lg max-w-2xl">
-    <div className="text-center">
-      <h2 className="text-5xl font-bold mb-4">Business Cards</h2>
-      {/* Embedded PDF Viewer */}
-      <div className="relative w-full h-[600px] border overflow-hidden">
-        <embed
-          src="/ReachOut-BusinessCards.pdf"
-          type="application/pdf"
-          width="100%"
-          height="600px"
-          className="rounded-lg border-none"
-        />
-      </div>
-    </div>
-  </section>
+        {/* BCard - PDF Display */}
+        <section className="bg-coffee p-10 rounded-lg max-w-2xl">
+          <div className="text-center">
+            <h2 className="text-5xl font-bold mb-4">Business Cards</h2>
+            {/* Clickable Image */}
+            <div className="relative w-full h-[375px] border overflow-hidden flex justify-center">
+              <a href="/ReachOut-BusinessCards.pdf" target="_blank" rel="noopener noreferrer">
+                <img 
+                  src="/bcard.png" 
+                  alt="Business Card Preview" 
+                  className="rounded-lg border-none max-w-full h-auto cursor-pointer"
+                />
+              </a>
+            </div>
+          </div>
+        </section>
 
-  {/* Brochure - PDF Display */}
-  <section className="bg-coffee p-10 rounded-lg max-w-2xl">
-    <div className="text-center">
-      <h2 className="text-5xl font-bold mb-4">Brochure</h2>
-      {/* Embedded PDF Viewer */}
-      <div className="relative w-full h-[600px] border overflow-hidden">
-        <embed
-          src="/ReachOut-Brochure.pdf"
-          type="application/pdf"
-          width="100%"
-          height="600px"
-          className="rounded-lg border-none"
-        />
+        {/* Brochure - PDF Display */}
+        <section className="bg-coffee p-10 rounded-lg max-w-2xl">
+          <div className="text-center">
+            <h2 className="text-5xl font-bold mb-4">Brochure</h2>
+            {/* Clickable Image */}
+            <div className="relative w-full h-[375px] border overflow-hidden flex justify-center">
+              <a href="/ReachOut-Brochure.pdf" target="_blank" rel="noopener noreferrer">
+                <img 
+                  src="/brochure.png" 
+                  alt="Brochure Preview" 
+                  className="rounded-lg border-none max-w-full h-auto cursor-pointer"
+                />
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
-    </div>
-  </section>
-</div>
       </main>
 
       {/* Footer */}

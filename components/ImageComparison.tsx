@@ -16,18 +16,17 @@ const ImageComparison = () => {
     const overlay = overlayRef.current;
     const slider = sliderRef.current;
 
-    // Initial position for the slider and overlay width
     let initialWidth = containerWidth / 2;
     overlay.style.width = `${initialWidth}px`;
     slider.style.left = `${initialWidth - slider.offsetWidth / 2}px`;
 
     const updateSliderPosition = (e: MouseEvent | TouchEvent) => {
       if (!isDraggingRef.current) return;
-
+      
       let pos = getCursorPos(e);
       if (pos < 0) pos = 0;
       if (pos > containerWidth) pos = containerWidth;
-
+      
       overlay.style.width = `${pos}px`;
       slider.style.left = `${pos - slider.offsetWidth / 2}px`;
     };
@@ -62,22 +61,17 @@ const ImageComparison = () => {
   return (
     <div className="flex flex-col items-center">
       <h1 className="text-2xl font-bold mb-4">Compare ReachOut Employer & Organization PDFs</h1>
-      <p className="mb-4">Drag the slider to compare the two documents:</p>
-      <div ref={containerRef} className="relative w-[600px] h-[800px] border">
-        {/* Base PDF */}
-        <iframe
-          src="/ReachOut-Organization.pdf"
-          className="absolute inset-0 w-full h-full"
-        />
-        {/* Overlay PDF */}
-        <div
-          ref={overlayRef}
-          className="absolute inset-0 overflow-hidden pointer-events-none"
-        >
-          <iframe
-            src="/ReachOut-Employer.pdf"
-            className="w-full h-full"
-          />
+      <p className="mb-4">Drag the slider to compare the two images:</p>
+      <div ref={containerRef} className="relative max-w-full max-h-full w-[600px] h-[400px] border overflow-hidden">
+        {/* Base Image */}
+        <a href="/ReachOut-Organization.pdf" target="_blank" rel="noopener noreferrer">
+          <img src="/organization.png" alt="Organization PDF Preview" className="absolute inset-0 w-[600px] h-[400px] object-cover" />
+        </a>
+        {/* Overlay Image */}
+        <div ref={overlayRef} className="absolute inset-0 overflow-hidden">
+          <a href="/ReachOut-Employer.pdf" target="_blank" rel="noopener noreferrer" className="pointer-events-auto">
+            <img src="/employer.png" alt="Employer PDF Preview" className="w-[600px] h-[400px] object-cover" />
+          </a>
         </div>
         {/* Slider */}
         <div
