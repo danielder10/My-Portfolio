@@ -6,7 +6,7 @@ import Button from "./Button";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Image, { StaticImageData } from "next/image";
-import SodaImageComparison from "@/components/SodaImageComparison";
+import CardStack from "@/components/CardStack";
 
 
 const Soda = () => {
@@ -97,7 +97,7 @@ const Soda = () => {
             </div>
           </div>
           <section className="text-left max-w-6xl mx-auto bg-coffee p-10 rounded-lg mb-12">
-            <SodaImageComparison/>
+            <CardStack/>
             </section>
             <br></br>
       </main>

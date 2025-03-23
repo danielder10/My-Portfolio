@@ -6,7 +6,7 @@ import Button from "./Button";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Image, { StaticImageData } from "next/image";
-import SodaImageComparison from "@/components/SodaImageComparison";
+import SodaImageComparison from "@/components/CardStack";
 
 
 const Magazine = () => {
